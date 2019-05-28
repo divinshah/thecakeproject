@@ -21,7 +21,7 @@
 				<img class="image" src="images/logo.jpg" alt="cake logo"/>
 				<a href="#"><li>Contact</li></a>
 				<a href="#"><li>FAQ</li></a>
-				<a href="#"><li>Login</li></a>
+				<a href="login.php"><li>Login</li></a>
 			</ul>
 			
 		</nav>
