@@ -6,20 +6,25 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <body>
 
+<section id="intro" class="clearfix">
+    <div class="container">
+    </div>
+  </section>
+  <!--
   <div class="banner">
     <img src="images/banner.jpg" alt="banner image">
   </div>
-  
+-->
   <section>
    
    
    
    <p class="tagline">
-   <i class="fas fa-quote-left fa-5x"></i>
+   <i class="fas fa-quote-left fa-2x"></i>
    Cakes are special. Every birthday, every celebration ends <br/>
    with something sweet, a cake, and people remember. <br/> 
    It's all about the memories.
-    <i class="fas fa-quote-right fa-5x"></i>
+    <i class="fas fa-quote-right fa-2x"></i>
    </p>
 	
   </section>

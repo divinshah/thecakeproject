@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 
   if($password == $cpassword){
 
-       <!--$hash = password_hash($password, PASSWORD_DEFAULT);-->
+       //$hash = password_hash($password, PASSWORD_DEFAULT);
        $adduser = $c->addClients($userName,$email,$password,$db);
        $message = $userName."thank you for signup";
     }
