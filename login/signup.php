@@ -1,6 +1,6 @@
 <?php
-require_once 'Database.php';
-require_once 'Client.php';
+require_once '../database/Database.php';
+require_once '../class/Client.php';
 
 $userName = $email = $password = "";
 
@@ -43,6 +43,7 @@ if(isset($_POST['submit']))
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php require_once './header.php'; ?>
 <main id="login_section">
             <h2 class="modal-title">SignUp</h2>  
             <div class="modal-body">
@@ -69,5 +70,6 @@ if(isset($_POST['submit']))
             ?></span>
             </div>
 </main>
+<?php require_once './footer.php'; ?>
 </body>
 </html>

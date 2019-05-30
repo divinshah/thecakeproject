@@ -1,6 +1,6 @@
 <?php
-require_once 'Database.php';
-require_once 'Client.php';
+require_once '../database/Database.php';
+require_once '../class/Client.php';
 
 if(isset($_POST['login']))
 {
@@ -17,7 +17,7 @@ if(isset($_POST['login']))
   if($row = $n){
      $_SESSION['Username']= $user ;
      
-    header('location:home.php'); //if match then go to the home page
+    header('location:../index.php'); //if match then go to the home page
       }
   else{
     $error = "Your username or password does not match";//if not then go to the registration page
@@ -41,6 +41,7 @@ if(isset($_POST['login']))
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php require_once '../header.php';?>
 <main id="login_section">
             <h2 class="modal-title">Login</h2>  
             <div class="modal-body">
@@ -63,5 +64,6 @@ if(isset($_POST['login']))
             ?></span>
             </div>
 </main>
+<?php require_once '../footer.php';?>
 </body>
 </html>
