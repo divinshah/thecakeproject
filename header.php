@@ -17,11 +17,16 @@
 			<ul>
 				<a href="index.php"><li>Home</li></a>
 				<a href="#"><li>About</li></a>
-				<a href="products/addcake.php"><li>Cakes</li></a>
-				<img class="image" src="images/cakelogo.png" alt="cake logo"/>
+
+				<a href="#"><li>Cakes</li></a>
+				<img class="image" src="images/logo.jpg" alt="cake logo"/>
+
+				<!--a href="products/addcake.php"><li>Cakes</li></a>
+				<img class="image" src="images/cakelogo.png" alt="cake logo"/-->
+
 				<a href="#"><li>Contact</li></a>
 				<a href="#"><li>FAQ</li></a>
-				<a href="products/login.php"><li>Login</li></a>
+				<a href="login.php"><li>Login</li></a>
 			</ul>
 			
 		</nav>

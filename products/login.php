@@ -1,6 +1,6 @@
 <?php
-require_once '../database/Database.php';
-require_once '../class/Client.php';
+require_once 'Database.php';
+require_once 'Client.php';
 
 if(isset($_POST['login']))
 {
@@ -17,7 +17,7 @@ if(isset($_POST['login']))
   if($row = $n){
      $_SESSION['Username']= $user ;
      
-    header('location:../index.php'); //if match then go to the home page
+    header('location:home.php'); //if match then go to the home page
       }
   else{
     $error = "Your username or password does not match";//if not then go to the registration page
@@ -35,7 +35,6 @@ if(isset($_POST['login']))
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
-<?php require_once '../header.php';?>
 <main id="login_section">
             <h2 class="modal-title">Login</h2>  
             <div class="modal-body">
@@ -58,6 +57,5 @@ if(isset($_POST['login']))
             ?></span>
             </div>
 </main>
-<?php require_once '../footer.php';?>
 </body>
 </html>

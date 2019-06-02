@@ -1,5 +1,7 @@
 <?php
 
+define( 'ROOT', '/thecakeproject' );
+
 class Database
 {
     // my properties

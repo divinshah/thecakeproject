@@ -1,0 +1,36 @@
+#login_section{
+    background-image:url("images/banner.jpg");
+    width:450px;
+    height:500px;
+    color:#06ABB8;
+    top:50%;
+    left:35%;
+    position:relative;
+	box-sizing: border-box;
+	border-radius: 20px;
+	padding:80px 30px;
+    font-weight:bold;
+}
+.modal-title{
+    text-align:center;
+}
+.btn{
+    background:#06ABB8;
+    color:white;
+    font-weight:bold;
+    border:1px solid white;
+    margin-top:5px;
+}
+#signup_section{
+    background-image:url("images/banner.jpg");
+    width:450px;
+    height:600px;
+    color:#06ABB8;
+    top:50%;
+    left:35%;
+    position:relative;
+	box-sizing: border-box;
+	border-radius: 20px;
+	padding:5px 30px;
+    font-weight:bold;
+}
