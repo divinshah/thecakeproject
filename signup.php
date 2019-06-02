@@ -1,6 +1,6 @@
 <?php
-require_once '../database/Database.php';
-require_once '../class/Client.php';
+require_once 'database/Database.php';
+require_once 'class/Client.php';
 
 $userName = $email = $password = "";
 
@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
 <meta charset="utf-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="login.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -43,20 +43,20 @@ if(isset($_POST['submit']))
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<?php require_once './header.php'; ?>
-<main id="login_section">
+<?php require_once 'header.php'; ?>
+<main id="signup_section">
             <h2 class="modal-title">SignUp</h2>  
             <div class="modal-body">
                 <form action="#" method="post">
                    <div class="form-group">
                       <label>Username</label>
-                      <input type="text" class="form-control col-sm-8" id="username" name="user" required/>
+                      <input type="text" class="form-control" id="username" name="user" required/>
                       <label>Email ID</label>
-                      <input type="Email" class="form-control col-sm-8" id="usermail" name="email" required/>
+                      <input type="Email" class="form-control" id="usermail" name="email" required/>
                       <label>Password</label>
-                      <input type="Password" class="form-control col-sm-8" id="password" name="pass" required/>
+                      <input type="Password" class="form-control" id="password" name="pass" required/>
                       <label>Confirm Password</label>
-                      <input type="Password" class="form-control col-sm-8" id="cpassword" name="cpass" required/>
+                      <input type="Password" class="form-control" id="cpassword" name="cpass" required/>
                       <button type="submit" class="btn btn-primary" name="submit">SignUp</button>
                    </div>
                 </form>               
@@ -70,6 +70,6 @@ if(isset($_POST['submit']))
             ?></span>
             </div>
 </main>
-<?php require_once './footer.php'; ?>
+<?php require_once 'footer.php'; ?>
 </body>
 </html>

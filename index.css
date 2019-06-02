@@ -7,6 +7,19 @@ body, html {
 * {
   box-sizing: border-box;
 }
+#intro {
+  width: 100%;
+  position: relative; 
+  /* background: url("../img/header.jpg") center bottom no-repeat; */
+  background: url("images/banner.jpg") center bottom no-repeat;
+  background-size: cover;
+  padding: 600px 0 120px 0;
+}
+
+#intro .intro-img {
+  width: 50%;
+  float: right;
+}
 .banner{
    max-width: 100%;
    height: auto; 
