@@ -1,5 +1,9 @@
-.product{
-	float:left;
-	height: 50px;
-	width: 100px;
+.clearfix {
+  overflow: auto;
+  margin-left: 10%;
+}
+
+.img2 {
+  float: left;
+  margin: 35px 70px 50px 90px;
 }

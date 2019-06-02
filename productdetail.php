@@ -1,3 +1,4 @@
+
 <?php require "header.php" ?>
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -12,15 +13,18 @@
   </div>
   
   <section>
-    <p><img class="product" src="images/redvelvet.jpeg" alt="cake">
+    <div class="clearfix">
+      <img class="img2" src="images/redvelvet.jpeg" alt="Pineapple" width="170" height="170">
       <h2>Red Velvet</h2>
       <h3>$40</h3>
-      <select>
-        <option>Size</option>
-        <option>8"</option>
-        <option>12"</option>
-      </select><br/>
-      description of cake</p>
+            <select>
+              <option>Size</option>
+              <option>8"</option>
+              <option>12"</option>
+            </select><br/>
+            description of cake <br/>
+            <button>BUY</button>
+    </div>
 
 	
   </section>
@@ -33,7 +37,7 @@
     <div class="col-sm-4">img3</div>
 	</div>
   
-</div>
+</div> 
 
 
 
