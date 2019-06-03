@@ -30,46 +30,72 @@ if(isset($_POST['submit']))
 <html>
 <head>
 <meta charset="utf-8">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="login.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
 <?php require_once 'header.php'; ?>
-<main id="signup_section">
-            <h2 class="modal-title">SignUp</h2>  
-            <div class="modal-body">
+<div class="container" id="signup_section">
+      <div class="d-flex justify-content-center h-100">
+		<div class="card">
+		  <div class="card-header">
+            <h2 class="modal-title">SignUp</h2>
+          </div>            
+          <div class="card-body">
                 <form action="#" method="post">
-                   <div class="form-group">
+                   <div class="input-group form-group">
+                     <div class="input-group-prepend">
                       <label>Username</label>
+                     </div>
                       <input type="text" class="form-control" id="username" name="user" required/>
-                      <label>Email ID</label>
-                      <input type="Email" class="form-control" id="usermail" name="email" required/>
-                      <label>Password</label>
-                      <input type="Password" class="form-control" id="password" name="pass" required/>
-                      <label>Confirm Password</label>
-                      <input type="Password" class="form-control" id="cpassword" name="cpass" required/>
-                      <button type="submit" class="btn btn-primary" name="submit">SignUp</button>
                    </div>
-                </form>               
-                <label>If you have account please Login</label>
-                <div class="btn btn-primary btn-sm"><a href="login.php" style="color:white;">Login</a></div>
-                <span style="color:red;">
+                   <div class="input-group form-group">
+                     <div class="input-group-prepend">                    
+                      <label>Email ID</label>
+                     </div>
+                      <input type="Email" class="form-control" id="usermail" name="email" required/>
+                   </div>
+                   <div class="input-group form-group">
+                     <div class="input-group-prepend">                    
+                      <label>Password</label>
+                     </div>
+                      <input type="Password" class="form-control" id="password" name="pass" required/>
+                   </div>
+                   <div class="input-group form-group">
+                     <div class="input-group-prepend">                   
+                      <label>Confirm Password</label>
+                     </div>
+                      <input type="Password" class="form-control" id="cpassword" name="cpass" required/>
+                   </div>
+                   <div class="form-group">                    
+                      <input type="submit" class="btn float-right login_btn" name="submit" value="SignUp">
+                   </div>
+                </form>
+            </div>
+            <div class="card-footer">            
+                <div class="d-flex justify-content-center links">
+					If have an account?<a href="login.php">Login</a>
+				</div>
+                <span style="color:white;">
               <?php
                 if(isset($message)){
                     echo $message;
                 }
             ?></span>
-            </div>
-</main>
+           </div>
+         </div>
+       </div>
+  </div>
+
 <?php require_once 'footer.php'; ?>
 </body>
 </html>
