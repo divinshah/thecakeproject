@@ -1,5 +1,13 @@
 
-<?php require "header.php" ?>
+<?php 
+require "header.php";
+require_once 'products/database.php';
+require_once 'products/cakes.php';
+$id = $_GET['id'];
+$dbcon = Database::getDb();
+$b = new Cakes();
+$mycake = $b->getCakeById($id, $dbcon);
+ ?>
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -14,7 +22,19 @@
   
   <section>
     <div class="clearfix">
-      <img class="img2" src="images/redvelvet.jpeg" alt="Pineapple" width="170" height="170">
+
+      <?php
+        echo "<h2>  $mycake->cakeName </h2>".
+             "<img class='img2' src='products/uploads/$mycake->cakeImage' alt='cake' width='170' height='170'>".
+             "Size <select>
+                <option>8''</option>
+                <option>12''</option>
+              </select><br/>
+            $mycake->cakeDesc <br/>
+            <button>BUY</button>";
+
+      ?>
+      <!-- <img class="img2" src="images/redvelvet.jpeg" alt="cake" width="170" height="170">
       <h2>Red Velvet</h2>
       <h3>$40</h3>
             <select>
@@ -23,7 +43,7 @@
               <option>12"</option>
             </select><br/>
             description of cake <br/>
-            <button>BUY</button>
+            <button>BUY</button> -->
     </div>
 
 	
