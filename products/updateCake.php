@@ -1,13 +1,21 @@
 <?php
+include 'header.php';
 require_once 'database.php';
 require_once 'cakes.php';
-include 'header.php';
 
-if(isset($_POST['add'])){
-    //$db = Database::getDb();
-    $cakeName= $_POST['cakename'];
-    $cakeDesc= $_POST['description'];
-    $imgFile = $_FILES['cakeimage']['name'];
+$ID = null;
+    
+    if (!empty($_GET['id'])) {
+        $ID = $_REQUEST['id'];
+        $dbcon = Database::getDb();
+        $c = new Cakes();
+        $cake = $c->getCakeById($ID, $dbcon);
+    }
+
+    if(isset($_POST['update'])){
+        $cakeName = $_POST['cakename'];
+        $cakeDesc = $_POST['description'];
+        $imgFile = $_FILES['cakeimage']['name'];
     $tmp_dir = $_FILES['cakeimage']['tmp_name'];
     $imgSize = $_FILES['cakeimage']['size'];
     
@@ -30,21 +38,22 @@ if(isset($_POST['add'])){
     else{
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";		
     }
+        
 
-    $db = Database::getDb();
-    $s = new Cakes();
-    $c = $s->addCake($cakeName, $cakeDesc, $cakePic, $db);
+       
+        $dbcon = Database::getDb();
+        $l = new Cakes();
+        $c = $l->updateCake($ID, $cakeName, $cakeDesc, $cakePic, $dbcon);
+        if($c){
+            header("Location: addcake.php");
+        } else {
+            echo  "problem updating";
+        }
+    }
 
-    
 
-
-    
-}
-
-
-?>
-
-<!doctype html>
+    ?>
+    <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -62,67 +71,34 @@ if(isset($_POST['add'])){
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
+
+    <div class="row">
+    <div class="col-md-4">
             <form action="#" method="post" enctype="multipart/form-data">
                 <div class="form-group">                   
                     <label for="cakename">Cake Name</label>
-                    <input type="text" class="form-control" name="cakename" required>
+                    <input type="text" class="form-control" name="cakename" value="<?php echo $cake->cakeName ?>" required>
                     <span class="error"><?php $name_error ?> </span>
                 </div>
                 <div class="form-group">                   
                     <label for="description">Description</label>
-                    <input type="text" class="form-control" name="description" required>
+                    <input type="text" class="form-control" name="description" value="<?php echo $cake->cakeDesc ?>" required>
                 </div>
                
                 <div class="form-group">                   
                     <label for="cakeimage">Image</label>
-                    <input type="file" class="custom-file" name="cakeimage" >
+                    <input type="file" class="custom-file" name="cakeimage" value="<?php echo $cake->cakeImage ?>" >
+                    <!--<img id='cake-thumbnail' src='uploads/<?php // $cake->cakePic ?>' /> -->
                 </div>
                 <div class="form-group">                   
-                    <input type="submit" class="btn btn-primary" name="add">
+                    <input type="submit" class="btn btn-primary" name="update">
                 </div>
             </form>
             </div>
             
-            <div class="col-md-8">
-                <table class="table table-bordered table-responsive">
-                    <thead>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                        <th>Action</th>
-                    </thead>
-
-
-                    <?php 
-                    $dbcon = Database::getDb();
-                    $b = new Cakes();
-                    $mycake = $b->getAllCakes(Database::getDb());
-                    
-                    foreach($mycake as $cake){
-                        echo "
-                    <tbody>
-                    <tr>
-                    <td><strong> $cake->id </strong></td>
-                    <td><strong> $cake->cakeName </strong></td>
-                    <td> $cake->cakeDesc </td>
-                    <td><img id='cake-thumbnail' src='uploads/$cake->cakeImage' /></div></td>
-                    <td><a href= deleteCake.php?id=" .$cake->id.">Delete</a>
-                    <a href= updateCake.php?id=" .$cake->id.">| Update</a>
-                    </td>
-                      </tr></tbody> ";
-
-                    }
-                    ?>
-
-
-                    </table>
-            </div>
-        </div>
     </div>
+    </body>
+    </html>
 
-</body>
-</html>
-<?php include 'footer.php';
+    <?php include 'footer.php';
+    ?>
