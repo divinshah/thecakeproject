@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'cakes.php';
-include 'header.php';
+include '../header.php';
 
 if(isset($_POST['add'])){
     //$db = Database::getDb();
@@ -125,4 +125,4 @@ if(isset($_POST['add'])){
 
 </body>
 </html>
-<?php include 'footer.php';
+<?php include '../footer.php';

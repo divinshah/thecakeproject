@@ -27,15 +27,15 @@ require_once 'products/cakes.php';?>
   <section>
    
    
-
+                  <div id="container-box">
                     <?php 
                     $dbcon = Database::getDb();
                     $b = new Cakes();
                     $mycake = $b->getAllCakes(Database::getDb());
 
-                    $numberOfColumns = 4;
+                    $numberOfColumns = 3;
                     $bootstrapColWidth = 12 / $numberOfColumns ;
-
+                    
                     $arrayChunks = array_chunk($mycake, $numberOfColumns);
                     foreach($arrayChunks as $mycake) {
                         echo '<div class="row">';
@@ -52,20 +52,13 @@ require_once 'products/cakes.php';?>
                         }
                         echo '</div>';
                     }  
-                    ?>
 
+                    ?>
+                  </div>
             
 	
   </section>
 
-  <div class="container-fluid">
-  
-    <div class="row">
-    <div class="col-sm-4">img1</div>
-    <div class="col-sm-4">img2</div>
-    <div class="col-sm-4">img3</div>
-	</div>
-  
 </div>
 
 

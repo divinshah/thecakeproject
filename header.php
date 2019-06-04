@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="/thecakeproject/header.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<title>MR.Cake</title>
@@ -15,7 +15,7 @@
 		      </div>
 			</div>
 			<ul>
-				<a href="index.php"><li>Home</li></a>
+				<a href="/thecakeproject/index.php"><li>Home</li></a>
 				<a href="#"><li>About</li></a>
 
 				<a href="#"><li>Cakes</li></a>
