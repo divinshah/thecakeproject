@@ -1,5 +1,6 @@
 <?php
-session_start();
+include ('function.php');
+/*session_start();
 require_once 'database/Database.php';
 require_once 'class/Client.php';
 
@@ -7,12 +8,13 @@ if(isset($_POST['login']))
 {
   $user = $_POST['user'];
   $pass = $_POST['pass'];
+  $hash = password_hash($pass, PASSWORD_BCRYPT);
   
 
 
   $db = Database::getdb();
   $c = new Client();
-  $n = $c->getAllClientsLogin($user,$pass,$db);
+  $n = $c->getAllClientsLogin($user,$hash,$db);
   //checking for user name and password already exits or not
   if($row = $n){
      $_SESSION['Username']= $user ;
@@ -22,7 +24,7 @@ if(isset($_POST['login']))
   else{
     $error = "Your username or password does not match";//if not then go to the registration page
      }
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,6 +52,7 @@ if(isset($_POST['login']))
           </div>            
           <div class="card-body">
               <form action="#" method="post">
+                <?php echo display_error(); ?>
                   <div class="form-group">
                     <label>Username</label>
                     <input type="text" class="form-control" id="username" name="user" required/>

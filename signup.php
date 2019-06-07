@@ -1,8 +1,9 @@
 <?php
-require_once 'database/Database.php';
-require_once 'class/Client.php';
+include 'function.php';
+//require_once 'database/Database.php';
+//require_once 'class/Client.php';
 
-$userName = $email = $password = "";
+/*$userName = $email = $password = "";
 
 if(isset($_POST['submit']))
 {
@@ -16,14 +17,15 @@ if(isset($_POST['submit']))
 
   if($password == $cpassword){
 
-       //$hash = password_hash($password, PASSWORD_DEFAULT);
-       $adduser = $c->addClients($userName,$email,$password,$db);
+       $hash = password_hash($password, PASSWORD_BCRYPT);
+       $adduser = $c->addClients($userName,$email,$hash,$db);
+       //$adduser = $c->addClients($userName,$email,$password,$db);
        $message = $userName."thank you for signup";
     }
   else{
      $message = "password not match";
    }
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -52,17 +54,18 @@ if(isset($_POST['submit']))
           </div>            
           <div class="card-body">
                 <form action="#" method="post">
+                   <?php echo display_error(); ?>
                    <div class="input-group form-group">
                      <div class="input-group-prepend">
                       <label>Username</label>
                      </div>
-                      <input type="text" class="form-control" id="username" name="user" required/>
+                      <input type="text" class="form-control" id="username" name="user" value="<?php echo $userName; ?>" required/>
                    </div>
                    <div class="input-group form-group">
                      <div class="input-group-prepend">                    
                       <label>Email ID</label>
                      </div>
-                      <input type="Email" class="form-control" id="usermail" name="email" required/>
+                      <input type="Email" class="form-control" id="usermail" name="email" value="<?php echo $email; ?>" required/>
                    </div>
                    <div class="input-group form-group">
                      <div class="input-group-prepend">                    

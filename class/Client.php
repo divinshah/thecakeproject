@@ -19,7 +19,7 @@ class Client
 	public function getAllClientsLogin($loginuser,$loginpass,$db){
 
         $sql = "SELECT*FROM clients WHERE user_name='$loginuser' and password='$loginpass'";
-
+echo $sql; die();
     $pst = $db->prepare($sql);
     $pst->execute();
     $Clients = $pst->fetchAll(PDO::FETCH_OBJ);
