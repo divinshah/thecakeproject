@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '../header.php';
 require_once 'database.php';
 require_once 'cakes.php';
 
@@ -100,5 +100,5 @@ $ID = null;
     </body>
     </html>
 
-    <?php include 'footer.php';
+    <?php include '../footer.php';
     ?>
