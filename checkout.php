@@ -22,15 +22,15 @@
 </head>
 <body>
     <main id="order_main">
-    <h2 style="text-align:center;">Mr.Cake CheckOut</h1>
+    <h2 style="text-align:center;">Mr.Cake CheckOut</h2>
     
     <div>
-     <h4>Your Order Details</h4>
+     <!--<h4>Your Order Details</h4>-->
     </div>
         
     <div>
-     <h4>Fill the Details</h4>
-        <h5>Delivery Address</h5>
+     <h4>Fill the Pickup Details</h4>
+       
         
        
     <?php
@@ -331,7 +331,7 @@
       <div class="form-group">
         <input type="hidden" name="order_id" value="<?php
                             //if(isset($order_id)){
-                                echo $order_id;
+                                echo $order_id = uniqid();
                            // echo $_POST['order_id'];
                             //}
                       ?>" /> 
