@@ -19,7 +19,7 @@
 				<a href="#"><li>About</li></a>
 
 				<a href="#"><li>Cakes</li></a>
-				<img class="image" src="images/logo.jpg" alt="cake logo"/>
+				<img class="image" src="images/cakelogo.png" alt="cake logo"/>
 
 				<!--a href="products/addcake.php"><li>Cakes</li></a>
 				<img class="image" src="images/cakelogo.png" alt="cake logo"/-->

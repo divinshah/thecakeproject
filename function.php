@@ -1,4 +1,6 @@
 <?php 
+
+#REFERENCE https://codewithawa.com/posts/admin-and-user-login-in-php-and-mysql-database
 session_start();
 
 // connect to database
@@ -136,7 +138,7 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: admin.php');		  
+				header('location: products/addcake.php');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";

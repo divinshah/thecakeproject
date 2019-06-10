@@ -7,9 +7,8 @@
 <body>
 
 <div class="jumbotron">
-    <div class="container cake-head">
-        <h1>Range of Cakes</h1>
-    </div>
+    
+    
 </div>
   <!--
     <section id="intro" class="clearfix">
