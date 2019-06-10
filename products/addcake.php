@@ -109,7 +109,9 @@ if(isset($_POST['add'])){
                     <td><strong> $cake->cakeName </strong></td>
                     <td> $cake->cakeDesc </td>
                     <td><img id='cake-thumbnail' src='uploads/$cake->cakeImage' /></div></td>
-                    <td><a href= deleteCake.php?id=" .$cake->id.">Delete</a></td>
+                    <td><a href= deleteCake.php?id=" .$cake->id.">Delete</a>
+                    <a href= updateCake.php?id=" .$cake->id.">| Update</a>
+                    </td>
                       </tr></tbody> ";
 
                     }

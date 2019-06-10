@@ -33,6 +33,17 @@ class Cakes
         return $count;
 
     }
+    public function updateCake($id, $cakeName, $cakeDesc, $cakePic, $db)
+	  {
+        $q = $db->prepare('UPDATE cakes
+                SET cakeName = ?,
+                cakeDesc = ?,
+                cakeImage = ?
+                WHERE ID = ?');
+        $count = $q->execute(array($cakeName, $cakeDesc, $cakePic, $id));
+
+        return $count;
+    }
 
     public function deleteCake($id, $db){
         $sql = "DELETE FROM cakes WHERE ID = ?";

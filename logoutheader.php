@@ -1,6 +1,7 @@
 <?php
-session_start();
-$_SESSION['Username'];
+include ('function.php');
+//session_start();
+//$_SESSION['Username'];
 //echo $_SESSION['Username'];
 ?>
 
@@ -37,8 +38,11 @@ $_SESSION['Username'];
 
 				<a href="#"><li>Contact</li></a>
 				<a href="#"><li>FAQ</li></a>
-                <a href="#"><li><?php echo $_SESSION['Username'];?></li></a>
+                <?php  if (isset($_SESSION['user'])) : ?>
+                <a href="#"><li><?php echo $_SESSION['user']['user_name']; ?></li></a>
+                <!--a href="#"><li--><!--?php echo $_SESSION['Username'];?></li></a-->
 				<a href="logout.php"><li>Logout</li></a>
+                <?php endif ?>
 			</ul>
 			
 		</nav>

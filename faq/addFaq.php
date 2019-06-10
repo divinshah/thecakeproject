@@ -2,7 +2,7 @@
 $page_title = "AddFAQ";
 require_once '../database/Database.php';
 require_once 'Faq.php';
-require_once '../adminheader.php';
+include '../admin.php';
 
 // define variables and set to empty values
 $queErr = $ansErr = "";
@@ -34,4 +34,4 @@ $question = $answer = "";
 </form>
 <a href="listfaqs.php">Go to the list</a>
 </div>
-<?php include_once '../adminfooter.php' ?>
+<?php include '../adminfooter.php'; ?>

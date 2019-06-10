@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+<<<<<<< HEAD
 	<link rel="stylesheet" href="styles/header.css">
+=======
+	<link rel="stylesheet" href="/thecakeproject/header.css">
+>>>>>>> a4faea013658d9f24383b194103b3ab0b5c02797
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -26,6 +30,7 @@
 		      </div>
 			</div>
 			<ul>
+<<<<<<< HEAD
 				<a href="index.php"><li>Home</li></a>
 				
 				<a href="#"><li>About</li></a>
@@ -33,6 +38,16 @@
 				<a href="#"><li>Cakes</li></a>
 				
 				<img class="image" src="images/cakelogo.png" alt="cake logo"/>
+=======
+				<a href="/thecakeproject/index.php"><li>Home</li></a>
+				<a href="#"><li>About</li></a>
+
+				<a href="#"><li>Cakes</li></a>
+				<img class="image" src="/thecakeproject/images/logo.jpg" alt="cake logo"/>
+
+				<!--a href="products/addcake.php"><li>Cakes</li></a>
+				<img class="image" src="images/cakelogo.png" alt="cake logo"/-->
+>>>>>>> a4faea013658d9f24383b194103b3ab0b5c02797
 
 				<a href="addContactForm.php"><li>Contact</li></a>
 				
