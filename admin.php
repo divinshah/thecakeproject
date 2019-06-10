@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
 
       <ul class="list-unstyled components">
         <li class="active">
-          <a href="blogAdmin.php">Cakes</a>
+          <a href="products/addcake.php">Cakes</a>
         </li>
 		<br>
         <li class="active">

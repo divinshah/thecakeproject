@@ -50,6 +50,7 @@ if(isset($_POST['add'])){
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="adminStyle.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -61,7 +62,46 @@ if(isset($_POST['add'])){
   </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+    <div class="container">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link">
+              <i class="fas fa-user-times"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+ <div class="wrapper">
+  <nav id="sidebar" class="bg-secondary">
+      <div class="sidebar-header ">
+        <h2>Admin Panel</h2>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="products/addcake.php">Cakes</a>
+        </li>
+		<br>
+        <li class="active">
+          <a href="listJobPostsAdmin.php">Orders</a>
+        </li>
+        <br>				
+         <li class="active">
+          <a href="faq/addFaq.php">FAQ</a>
+        </li>
+        <br>
+         <li class="active">
+          <a href="listfaqs_admin.php">Contact</a>
+        </li> 
+        <br>		
+      </ul>
+    </nav>
+    
     <div class="container-fluid">
+    <h2>Add Cake </h2>
         <div class="row">
             <div class="col-md-4">
             <form action="#" method="post" enctype="multipart/form-data">
@@ -110,7 +150,7 @@ if(isset($_POST['add'])){
                     <td> $cake->cakeDesc </td>
                     <td><img id='cake-thumbnail' src='uploads/$cake->cakeImage' /></div></td>
                     <td><a href= deleteCake.php?id=" .$cake->id.">Delete</a>
-                    <a href= updateCake.php?id=" .$cake->id.">| Update</a>
+                    <a href= updateCake.php?id=" .$cake->id."> Update</a>
                     </td>
                       </tr></tbody> ";
 
@@ -125,4 +165,3 @@ if(isset($_POST['add'])){
 
 </body>
 </html>
-<?php include '../footer.php';

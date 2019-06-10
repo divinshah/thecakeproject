@@ -50,7 +50,7 @@ function register(){
 					  VALUES('$userName',  '$user_type', '$email', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: home.php');
+			header('location: index.php');
 		}else{
 			$query = "INSERT INTO clients (user_name, user_type, email,  password) 
 					  VALUES('$userName', 'user','$email', '$password')";
@@ -136,7 +136,7 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: home.php');		  
+				header('location: admin.php');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
