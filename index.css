@@ -40,9 +40,9 @@ i{
   color: #ffffff;
 }
 .jumbotron {
-  background-image: url("images/cakebanner.jpg");
+  background-image: url("images/banner.jpg");
   background-size: cover;
-  height: 250px;
+  height: 350px;
 }
 .productbox {
   background-color:#ffffff;

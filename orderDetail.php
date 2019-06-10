@@ -24,44 +24,10 @@
 </head>
 <body>
     <main id="order_main">
-    <h2 style="text-align:center;">Order</h1>
+    <h2 style="text-align:center;">Order</h2>
      <h4>Your Order Details</h4>
          
-     <?php
-        /*
-     require_once ('Database.php');
-     require_once ('Checkout.php');
-        
-     $dbcon = Database::getDb(); //to get database connection
-     $o = new Checkout(); //create new instance of object
-     $myorder =  $o->getAllCustomerWithDetails( $dbcon); //call method getAllJobPositions()
-  
-         //display all list of Job Posts 
-                foreach($myorder as $order)
-                {
-                    echo "<p>" . $order->firstname . " " . $order->lastname ."</p>" .
-                        "<p>". $order->streetname . $order->city . " " . $order->province ."</p>" .  
-                        "<p>". $order->postal_code ."</p>" .  
-                        "<p>". $order->email_id."</p>" .  
-                        "<p>". $order->phone_no."</p>" .
-                        "<p>". $order->order_id . "</p>". 
-                        "<p>" . $order->delivery_date . "</p>" . "<hr>" .
-                    
-                    "<form action='' method='post' class='form-horizontal'>".
-                                "<input type='hidden' name = 'id' value='$order->id' />" .
-                                "<input type='submit' name='confirm_order' value='Confirm Order' />" .
-                                "</form>" ;
-                    
-                 
-                    
-                  /*  "<form action='' method='post' class='form-horizontal'>".
-                                "<input type='hidden' name = 'id' value='$order->id' class='id'/>" .
-                                "<input type='submit' name='done' value='Cancel' class='cancel'/>" .
-                                "</form>" ;*/
-            /*    }
-        */
-        
-    ?>
+    
         
 <?php
         
@@ -143,12 +109,12 @@
                        "<p>" ."Delivery Date: ".  ($_POST['delivery_date']) ."</p>" 
                        
                        
-                       ."</div>" ;
+                       ."</div>" .
                        
-                      /* "<form action='orderDetail.php' method='post'>".
+                       "<form action='response.php' method='post'>".
                            // "<input type='hidden' name = 'id' value='$c->id' />" .
                             "<input type='submit' name='confirm_order' value='Confirm Order'  />" .
-                            "</form>" */
+                            "</form>" ;
                    
                    //echo $order_id;
 

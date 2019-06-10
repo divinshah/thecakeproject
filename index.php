@@ -6,11 +6,17 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <body>
 
-<section id="intro" class="clearfix">
+<div class="jumbotron">
+    <div class="container cake-head">
+        <h1>Range of Cakes</h1>
+    </div>
+</div>
+  <!--
+    <section id="intro" class="clearfix">
     <div class="container">
     </div>
   </section>
-  <!--
+  
   <div class="banner">
     <img src="images/banner.jpg" alt="banner image">
   </div>
