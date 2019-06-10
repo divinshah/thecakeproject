@@ -69,6 +69,18 @@ class Checkout{
         
         return $orderdetail; 
     }
+    
+    
+      //to delete order(Admin can Delete it)
+     public function deleteOrder($id, $dbcon){
+        $sql = "DELETE FROM checkout_delivery_info WHERE id = :id";
+
+        $pst = $dbcon->prepare($sql);
+        $pst->bindParam(':id', $id);
+        $count = $pst->execute();
+        return $count;
+
+    }
        
 }
 

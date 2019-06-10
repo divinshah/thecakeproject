@@ -1,32 +1,19 @@
 
-
-
-<?php
-    
-    require_once ('database/Database.php');
-    require_once ('class/Checkout.php');
- 
-   /* $response_msg=""; //response message
-    $firstname = $lastname = $streetname = $city = $province = $postal_code = $email_id = $phone_no = $delivery_date = $order_id = "";
-
-            if(isset($_POST['confirm_order']))
-            {
-                 $response_msg = "Thank You  $firstname  $lastname for your Interest! We will response you soon on  $email_id";
-            }
-    */
-    ?>
-
-<!-- Response Message -->
+<!DOCTYPE html>
 <html>
-<head></head>
-    <body>
-   <!--<div id="response_message">
-       <?php
-           echo $response_msg;
-       ?>
-    </div> -->
-</body>
-</html>
+<head>
+<?php require "header.php" ?>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="styles/order.css">
+</head>
+<body>
 
 
 <?php
@@ -43,11 +30,29 @@ require 'PHPMailer-master/src/SMTP.php';
 // Load Composer's autoloader
 require 'PHPMailer-master/vendor/autoload.php';
 
+//class and database files    
+require_once ('database/Database.php');
+require_once ('class/Checkout.php');
+ 
+    //print_r($_POST);
+    //die();
+
 //Margi added for click on submit button
-if(isset($_POST['confirm_order'])) {
-
-
-// Instantiation and passing `true` enables exceptions
+//if(isset($_POST['confirm_order'])) {
+          //$email_id = $_POST['email_id'];
+$response_msg = false;
+if(isset($_POST['confirm_order']))
+{
+    $response_msg = $_POST['confirm_order'];
+    $email = $_POST['email_id'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+  
+    echo "<h1 style='margin-top: 30px;text-align:center;'>" . "Thank You for Ordering!" . "</h1>";
+    
+    //refernce:https://stackoverflow.com/questions/14097897/how-to-fix-notice-undefined-index-in-php-form-action
+    //Mail refernce: https://github.com/PHPMailer/PHPMailer
+    // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
@@ -57,16 +62,17 @@ try {
     $mail->Host       = 'smtp.gmail.com'; //smtp2.example.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'margi00patel@gmail.com';                     // SMTP username
-    $mail->Password   = 'Humber2019';                               // SMTP password
+    $mail->Password   = 'MrCake2019';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
     $mail->setFrom('margi00patel@gmail.com', 'Mr.Cake');
-    $mail->addAddress('margi00patel@gmail.com', 'Joe User');     // Add a recipient
+    $mail->addAddress($email, 'Customer');     // Add a recipient
+   //$mail->addAddress($email_id, 'Joe User');  
     
-    print_r( $_POST );
-    die();
+    //print_r( $_POST );
+    //die();
     
     
     //$mail->addAddress('ellen@example.com');               // Name is optional
@@ -80,8 +86,8 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'Thank You for Ordering Cake! ' . $firstname . $lastname ;
+    $mail->Subject = 'Ordering Cake';
+    $mail->Body    = 'Thank You ' . $firstname . " " . $lastname . ' for Ordering Cake! ';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
@@ -93,33 +99,7 @@ try {
 
 ?>
 
-
-
-<!--Margi added Form-->
-<!DOCTYPE html>
-<html>
- <head>
-  <title>Send an Email on Form Submission using PHP with PHPMailer</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- </head>
- <body>
-  <br />
-  <div class="container">
-   <div class="row">
-    <div class="col-md-8" style="margin:0 auto; float:none;">
-     <h3 align="center">Send an Email on Form Submission using PHP with PHPMailer</h3>
-     <br />
-     <?php //echo $error; ?>
-     <form method="post">
-    
-     <!-- <div class="form-group" align="center">
-       <input type="submit" name="confirm_order" value="Confirm Order" class="btn btn-info" />
-      </div>-->
-     </form>
-    </div>
-   </div>
-  </div>
- </body>
+</body>
+<?php include "footer.php" ?>
 </html>
+
