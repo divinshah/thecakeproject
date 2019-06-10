@@ -3,6 +3,7 @@
 require "../header.php";
 require_once 'database.php';
 require_once 'cakes.php';
+
 $id = $_GET['id'];
 $dbcon = Database::getDb();
 $b = new Cakes();
@@ -31,8 +32,10 @@ $mycake = $b->getCakeById($id, $dbcon);
                 <option>8''</option>
                 <option>12''</option>
               </select><br/>
-            $mycake->cakeDesc <br/>
-            <button>BUY</button>";
+            $mycake->cakeDesc <br/> " .
+             
+            //link for checkout page
+        "<a href='../checkout.php?id=".$id."' class = 'btn-primary pull-right' style='padding:5px;margin:20px;'> " . "Buy " . "</a>" ;
 
       ?>
       <!-- <img class="img2" src="images/redvelvet.jpeg" alt="cake" width="170" height="170">
