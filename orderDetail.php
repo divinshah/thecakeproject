@@ -86,7 +86,7 @@
                $delivery_date = $_POST['delivery_date'];
                $order_id = $_POST['order_id'];
                 $cakeName = $_POST['cake_name']; //cake name
-                $cakeDesc = $_POST['cake_desc'];
+                $cakeDesc = $_POST['cake_desc']; //cake description
 
               
                 //defined email variable to send email on response page
@@ -161,7 +161,7 @@
                        
                        ; */
                    
-                   //margi trying to do details in center
+                   //Item and Customer Details 
                    
                    echo "<div class='row' style='padding:10px;'>" .
                         "<div class='col-sm-4 '> " .
@@ -201,6 +201,7 @@
                        "</div>" .
                        */
                        
+                       // confirm order and cancel buttons
                        "<div class='modal-footer'>" .
                             "<form action='response.php' method='post'>".
                            // "<input type='hidden' name = 'id' value='$c->id' />" .
