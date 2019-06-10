@@ -29,13 +29,30 @@
 	
   </section>
 
+  <!-- Cakes list -->
+  <?php
+require_once 'products/database.php';
+require_once 'products/cakes.php';
+
+$dbcon = Database::getDb();
+$b = new Cakes();
+$mycake = $b->getAllCakes(Database::getDb());
+
+
+?>
   <div class="container-fluid">
+  <div class="row">
+  <?php foreach($mycake as $cake){ ?>
+    
+    <div class="col-md-4 column productbox">
+    <img <?php echo "src=products/uploads/$cake->cakeImage" ?> class="img-responsive card-img-top" width="300px">
+    <div class="producttitle"><?php echo $cake->cakeName ?></div>
+    <div class="productprice"><div class="pull-right"><a href="#" class="btn btn-primary btn-sm" role="button">BUY</a></div></div>
+  </div>
   
-    <div class="row">
-    <div class="col-sm-4">img1</div>
-    <div class="col-sm-4">img2</div>
-    <div class="col-sm-4">img3</div>
-	</div>
+  <?php } ?>
+  </div>
+   
   
 </div>
 
