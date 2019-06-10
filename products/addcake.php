@@ -86,7 +86,7 @@ if(isset($_POST['add'])){
         </li>
 		<br>
         <li class="active">
-          <a href="listJobPostsAdmin.php">Orders</a>
+          <a href="../listOrdersAdmin.php">Orders</a>
         </li>
         <br>				
          <li class="active">

@@ -43,20 +43,11 @@ require_once 'cakes.php';?>
                         echo '</div>';
                     }  
 
-<<<<<<< HEAD:listCakes.php
-  </section>
-=======
                     ?>
                   </div>
             
 	
   </section>
-
-</div>
-
-
-
->>>>>>> a4faea013658d9f24383b194103b3ab0b5c02797:products/listCakes.php
 </body>
 
 <?php include "../footer.php" ?>
