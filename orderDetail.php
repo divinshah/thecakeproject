@@ -24,8 +24,8 @@
 </head>
 <body>
     <main id="order_main">
-    <h2 style="text-align:center;">Order</h2>
-     <h4>Your Order Details</h4>
+    <!--<h2 style="text-align:center;">Order</h2>-->
+     <h4 style="text-align:center;">Your Order Details</h4>
          
     
         
@@ -35,6 +35,7 @@
     //require_once 'Checkout.php';
         include 'database/Database.php';
         include 'class/Checkout.php';
+        require_once './products/cakes.php'; 
       
         /*print_r($_POST);
         
@@ -84,9 +85,14 @@
                $phone_no = $_POST['phone_no'];
                $delivery_date = $_POST['delivery_date'];
                $order_id = $_POST['order_id'];
-
+                $cakeName = $_POST['cake_name']; //cake name
+                $cakeDesc = $_POST['cake_desc'];
 
               
+                //defined email variable to send email on response page
+                  $email= "";
+                  $email = $_POST['email_id']; 
+                       
         
                 //connection with database
                if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['streetname']) && !empty($_POST['city']) && !empty($_POST['province']) && !empty($_POST['postal_code']) && !empty($_POST['email_id']) && !empty($_POST['phone_no']) && !empty($_POST['delivery_date']))
@@ -96,31 +102,72 @@
                    $dbcon = Database::getDb(); //get database connection
                    $cd = new Checkout(); //create new instance of object 
                    $c = $cd->addCustomerInfo($firstname, $lastname, $streetname, $city, $province, $postal_code, $email_id, $phone_no,                                  $delivery_date, $order_id, $dbcon); //call the method addEmployee
-//get id for inserted data
-                  //$id = $cd->lastInsertId(); //added
-                    //echo $id;
-                   echo "<div>" . 
+                   
+                   //print_r($c);
+                   //die();
+                   //get id for inserted data
+                   
+                 
+                   
+                   echo //for Cake Details using bootstrap
+                      " <div class='row'>" .
+                       " <div class='col-sm-6'>" .
+                       "<div class='card bg-light mb-3' style='max-width: 18rem;'>" .
+                        "<div class='card-header'><h5>Item Details</h5></div>" .
+                        "<div class='card-body'>" .
+                        "<h6 class='card-title'>". ($_POST['cake_name']) ."</h6>" . //cake name
+                        "<p class='card-text'>"  . $_POST['cake_desc']. "</p>" .    //cake description
+                        "</div>" .
+                        "</div> ";
+                       
+                  
+                   echo 
+                       
+                       
+                       "<div class='card' style='width: 18rem;'>" .
+                        "<div class='card-body'> " .
+                       
+                       
+                       "<div>" . 
                        //"<p>" ."Order Id: ".  print_r($order_id) ."</p>" .
                         "<p>" ."Order Id: ". $order_id =  $_POST['order_id'] ."</p>" .
                        "<p>" . "Name: " .($_POST['firstname']) . ($_POST['lastname']) ."</p>" .
                        "<p>" . "Address: " .($_POST['streetname']) . ", ". ($_POST['city']) .  " " .($_POST['province']). " - " .                           ($_POST['postal_code']) ."</p>" .
                        "<p>" ."Email Id: " .  ($_POST['email_id']) ."</p>" .
                        "<p>" ."Phone No.: " .  ($_POST['phone_no']) ."</p>" .
-                       "<p>" ."Delivery Date: ".  ($_POST['delivery_date']) ."</p>" 
+                       "<p>" ."Pick-Up Date: ".  ($_POST['delivery_date']) ."</p>" .
+                       "<p>" ."Cake : " .  ($_POST['cake_name']) ."</p>" .
+                       "<p>" . "Cake Dec" . ($_POST['cake_desc']) ."</p>".
+                     
+                       "</div>" .
                        
                        
-                       ."</div>" .
-                       
+                       //confrim order button
+                       "<div class='text-center'>" .
                        "<form action='response.php' method='post'>".
                            // "<input type='hidden' name = 'id' value='$c->id' />" .
-                            "<input type='submit' name='confirm_order' value='Confirm Order'  />" .
-                            "</form>" ;
+                            "<input type='hidden' name = 'firstname' value='$firstname' />" .
+                            "<input type='hidden' name = 'lastname' value='$lastname' />" .
+                            "<input type='hidden' name = 'email_id' value='$email' />" .
+                            "<input type='submit' name='confirm_order' value='Confirm Order'  class = 'btn-primary pull-left'/>" .
+                            "</form>" .
+                       "</div>".
+                       //cancel button
+                       "<div class='text-center'>" .
+                       " <a href='products/listCakes.php' class = 'btn-primary pull-right' style='padding:5px;margin:20px; display: inline-block;vertical-align: bottom;'> " . "Cancel " . "</a>" .
+                       "</div>" 
+                       ."</div>" .
+                       " </div>" 
+                       
+                       
+                       
+                       ;
                    
                    //echo $order_id;
 
                     if($c)
                      {
-                        $response_msg = "Thank You  $firstname $lastname For Ordering!  ";
+                        //$response_msg = "Thank You  $firstname $lastname For Ordering!  ";
                         //header('Location:  orderDetail.php');
                        // echo $id;echo ($_POST['firstname']);
                      } 
@@ -142,7 +189,7 @@
 ?>
         <div>
         <?php
-           echo "<h5>" . $response_msg . "</h5>";
+           //echo "<h5>" . $response_msg . "</h5>";
        ?>
         </div>
 
