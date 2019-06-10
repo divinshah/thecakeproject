@@ -1,10 +1,8 @@
 <?php
 $page_title = "AddFAQ";
-
-session_start();
 require_once '../database/Database.php';
 require_once 'Faq.php';
-echo "<link rel='stylesheet' type='text/css' href='faq.css' />";
+require_once '../adminheader.php';
 
 // define variables and set to empty values
 $queErr = $ansErr = "";
@@ -36,3 +34,4 @@ $question = $answer = "";
 </form>
 <a href="listfaqs.php">Go to the list</a>
 </div>
+<?php include_once '../adminfooter.php' ?>

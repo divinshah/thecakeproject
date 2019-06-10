@@ -3,6 +3,7 @@ $page_title = "DeleteFAQ";
 session_start();
 require_once '../database/Database.php';
 require_once 'Faq.php';
+require_once '../adminheader.php';
 
 
 if(isset($_POST['delete'])){
@@ -15,3 +16,4 @@ if(isset($_POST['delete'])){
         header("Location: listfaqs.php");
     }
 }
+<?php include_once '../adminfooter.php' ?>

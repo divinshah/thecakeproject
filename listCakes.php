@@ -54,22 +54,7 @@ require_once 'products/cakes.php';?>
                     }  
                     ?>
 
-            
-	
   </section>
-
-  <div class="container-fluid">
-  
-    <div class="row">
-    <div class="col-sm-4">img1</div>
-    <div class="col-sm-4">img2</div>
-    <div class="col-sm-4">img3</div>
-	</div>
-  
-</div>
-
-
-
 </body>
 
 <?php include "footer.php" ?>

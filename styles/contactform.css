@@ -1,0 +1,12 @@
+.container {
+	padding:10px 0px;
+	max-width:800px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+#form {
+	background:#F9F9F9;
+	padding:20px;
+	margin:25px 0;
+}

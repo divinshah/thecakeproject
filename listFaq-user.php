@@ -1,9 +1,8 @@
 <?php
-$page_title = "FAQ";
-include "../../views/header.php"; 
-require_once '../database/Database.php';
-require_once 'Faq.php';
-include "../header.php"; 
+$page_title = "MR. Cake"; 
+require_once 'database/Database.php';
+require_once 'faq/Faq.php';
+require_once 'header.php'; 
 
 
 $dbcon = Database::getDb();
@@ -23,6 +22,7 @@ $myfaq =  $t->getAllFaq(Database::getDb());
 </div>
 </div>
 </div>
+<?php require_once 'footer.php';?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready( function() {
@@ -39,3 +39,4 @@ $(document).ready( function() {
 
 });
 </script>
+ 

@@ -1,11 +1,10 @@
 <!-- HEADER -->
 <?php 
 $page_title = "Contact Form";
-require_once '../database/Database.php';
-require_once 'ContactForm.php';
-?>
-
-<h2>We would like to hear from you!!!</h2>
+require_once 'database/Database.php';
+require_once 'contactForm/ContactForm.php';
+require_once 'header.php';?>
+<link rel="stylesheet" href="styles/contactform.css">
   
 <?php
 
@@ -75,12 +74,12 @@ if(isset($_POST['addmsg'])){
 }
 	?>
 <main id="main">
-<div class="container">
-  <h2><center>Get In Touch</center></h2>
-    <div class="container-fluid"  style="background-color:#cfd1d3;">
+<div class="top_container">
+  <h2 style="color:#EF3E64;"><center>Want to talk to us?</center></h2>
+    <div class="container-fluid"  style="background-color:#71C9BD;">
       <div class="row">
         <div class="col-sm-4"><center><i class="fas fa-map-marker-alt"></i><br/><br/><br/>205 Humber College Blvd.,<br/>Toronto,<br/>Ontario, <br/> Canada <br/> M9W 5L7</center></div>
-        <div class="col-sm-4"><center><i class="fas fa-envelope-open-text"></i><br/><br/><br/>test123@gmail.com</center></div>
+        <div class="col-sm-4"><center><i class="fas fa-envelope-open-text"></i><br/><br/><br/>Mr.Cake@gmail.com</center></div>
         <div class="col-sm-4"><center><i class="fas fa-phone"></i><br/><br/><br/>1234567890</center></div>
     </div>
    </div>
@@ -91,36 +90,32 @@ if(isset($_POST['addmsg'])){
 <!--form starts here-->
  <form action="#" method="post" id="form">
    <div class="form-group">
-     <label for="contact_form_fname">First Name:<span class="red">*<?= $fnameErr; ?></span></label>
-     <input type="text" class="form-control" name="fname" value="<?= $fname; ?>" placeholder="First name..."><br />
+     <label for="contact_form_fname">First Name:<span class="red"><?= $fnameErr; ?></span></label>
+     <input type="text" class="form-control" name="fname" value="<?= $fname; ?>" placeholder="First name..." required><br />
     </div>
 	
 	<div class="form-group">
-	<label for="contact_form_lname">Last Name:<span class="red">*<?= $lnameErr; ?></span></label>
-    <input type="text" name="lname" class="form-control" value="<?= $lname; ?>" placeholder="Last name..."><br /></div>
+	<label for="contact_form_lname">Last Name:<span class="red"><?= $lnameErr; ?></span></label>
+    <input type="text" name="lname" class="form-control" value="<?= $lname; ?>" placeholder="Last name..." required><br /></div>
 	
 	<div class="form-group">
-    <label for="contact_form_number">Phone:<span class="red">*<?= $numberErr; ?></span></label><br />
-    <input type="text" name="number" class="form-control"  value="<?= $number; ?>" placeholder="Phone..."><br /></div>
+    <label for="contact_form_number">Phone:<span class="red"><?= $numberErr; ?></span></label><br />
+    <input type="text" name="number" class="form-control"  value="<?= $number; ?>" placeholder="Phone..." required><br /></div>
 	
 	<div class="form-group">
-	<label for="contact_form_email">E-mail:<span class="red">*<?= $emailErr; ?></span></label><br />
-    <input type="text" name="email" class="form-control" value="<?= $email; ?>" placeholder="E-mail..."><br /></div>
+	<label for="contact_form_email">E-mail:<span class="red"><?= $emailErr; ?></span></label><br />
+    <input type="text" name="email" class="form-control" value="<?= $email; ?>" placeholder="E-mail..." required><br /></div>
 	
 	<div class="form-group">
 	<label for="contact_form_city">City:</label><br />
     <input type="text" name="city" class="form-control" value="<?= $city; ?> "><br /></div>
 	
 	<div class="form-group">
-      <label for="contact_form_message">Message:<span class="red">*<?= $messageErr; ?></span></label><br />
-      <input type="text" name="message" value="<?= $message; ?>" placeholder="Message..." ><br />
-	
+      <label for="contact_form_message">Message:<span class="red"><?= $messageErr; ?></span></label><br />
+	 <textarea class="form-control" name="message" rows="5" value="<?= $message; ?>" placeholder="Any message..." required></textarea>
       <input type="submit" name="addmsg" value="Send Message" class="btn btn-success"></div>
  </form>
 </div>
 </main>
-
-
-
-	
-	
+<?php 
+require_once 'footer.php'; ?>

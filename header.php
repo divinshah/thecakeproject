@@ -1,9 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="styles/header.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="login.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<title>MR.Cake</title>
 	<nav>
 	<div class="handle">
@@ -16,16 +27,17 @@
 			</div>
 			<ul>
 				<a href="index.php"><li>Home</li></a>
+				
 				<a href="#"><li>About</li></a>
 
 				<a href="#"><li>Cakes</li></a>
-				<img class="image" src="images/logo.jpg" alt="cake logo"/>
+				
+				<img class="image" src="images/cakelogo.png" alt="cake logo"/>
 
-				<!--a href="products/addcake.php"><li>Cakes</li></a>
-				<img class="image" src="images/cakelogo.png" alt="cake logo"/-->
-
-				<a href="#"><li>Contact</li></a>
-				<a href="#"><li>FAQ</li></a>
+				<a href="addContactForm.php"><li>Contact</li></a>
+				
+				<a href="listFaq-user.php"><li>FAQ</li></a>
+				
 				<a href="login.php"><li>Login</li></a>
 			</ul>
 			

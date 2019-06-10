@@ -4,7 +4,7 @@ session_start();
 
 require_once '../database/Database.php';
 require_once 'Faq.php';
-include "../header.php"; 
+include "mrcake/headerfooter/header.php"; 
 
 if(isset($_POST['update'])){
     $id = $_POST['id'];
