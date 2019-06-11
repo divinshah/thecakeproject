@@ -1,7 +1,7 @@
 <?php
 $page_title = "MR. Cake"; 
 require_once 'database/Database.php';
-require_once 'faq/Faq.php';
+require_once 'Faq.php';
 require_once 'header.php'; 
 
 
@@ -9,7 +9,7 @@ $dbcon = Database::getDb();
 $t = new Faq();
 $myfaq =  $t->getAllFaq(Database::getDb());
 ?>
-<h1 id='headTitle'>Frequently Asked Questions</h1>
+<h2 style="color:#EF3E64;"><center>Want to talk to us?</center></h2>
 <div class='container'>
 <?php foreach($myfaq as $faqs){?>
 	
@@ -22,7 +22,6 @@ $myfaq =  $t->getAllFaq(Database::getDb());
 </div>
 </div>
 </div>
-<?php require_once 'footer.php';?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready( function() {

@@ -1,3 +1,4 @@
+<!--orderDetails page(Margi Patel)-->
 <!--<!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +32,8 @@
         
 <?php
         
-   // require_once 'Database.php';
-    //require_once 'Checkout.php';
+        // require_once 'Database.php';
+        //require_once 'Checkout.php';
         include 'database/Database.php';
         include 'class/Checkout.php';
         require_once './products/cakes.php'; 
@@ -42,34 +43,10 @@
         echo ($_POST['firstname']);
         die(); */
         
-        //$count = "";
-        //$firstname = $_GET['firstname'];
-        //$lastname = $_GET['lastname'];
-        
-    //get id
-  /*  if(isset($_GET['id']) && $_GET['id']!=''){
-        $id = $_GET['id'];
-
-        $dbcon = Database::getDb();
-        $d = new Checkout();
-        $count = $d->getOrderById($id,$dbcon);
-    
-        //foreach($count as $position){
-       //var_dump($count);
-    }
-         echo  "<div>" . "<h3>" . $count ->firstname ."</h3>" . "<br>" .
-                                "<p>" . $count ->order_id . "</p>";
-         */
-        
-         
-        
-       // echo ($_POST['firstname']);
-        
-        //echo ($_POST['order_id']);
 ?>
    
 <?php
-        
+        //defining variables
         $firstname = $lastname = $streetname = $city = $province = $postal_code = $email_id = $phone_no = $delivery_date = $order_id = "";
         $response_msg = "";
             if(isset($_POST['submitinfo']))
@@ -85,8 +62,8 @@
                $phone_no = $_POST['phone_no'];
                $delivery_date = $_POST['delivery_date'];
                $order_id = $_POST['order_id'];
-                $cakeName = $_POST['cake_name']; //cake name
-                $cakeDesc = $_POST['cake_desc'];
+               $cakeName = $_POST['cake_name']; //cake name
+               $cakeDesc = $_POST['cake_desc']; //cake description
 
               
                 //defined email variable to send email on response page
@@ -108,7 +85,7 @@
                    //get id for inserted data
                    
                  
-                   
+              /*     
                    echo //for Cake Details using bootstrap
                       " <div class='row'>" .
                        " <div class='col-sm-6'>" .
@@ -119,9 +96,9 @@
                         "<p class='card-text'>"  . $_POST['cake_desc']. "</p>" .    //cake description
                         "</div>" .
                         "</div> ";
-                       
+                     */  
                   
-                   echo 
+                   /*echo 
                        
                        
                        "<div class='card' style='width: 18rem;'>" .
@@ -159,11 +136,70 @@
                        ."</div>" .
                        " </div>" 
                        
+                       ; */
+                   
+                   //Item and Customer Details 
+                   
+                   echo "<div class='row' style='padding:10px;'>" .
+                        "<div class='col-sm-4 '> " .
+                       "<div class='card bg-light mb-3' style='margin-left:70px;max-width:400px;'>" .
+                        "<div class='card-header'><h5>Item Details</h5></div>" .
+                        "<div class='card-body'>" .
+                        "<h6 class='card-title'>". ($_POST['cake_name']) ."</h6>" . //cake name
+                        "<p class='card-text'>"  . $_POST['cake_desc']. "</p>" .    //cake description
+                        "</div>" .
+                        "</div>" ."</div>" .
+                        
+                       "<div class='col-sm-8'> " .
+                       "<div class='card bg-light mb-3' style='width: 700px;margin-right:70px;'>" .
+                        "<div class='card-header'><h5>Customer Details</h5></div>" .
+                        "<div class='card-body'>" .
+                        //"<p>" ."Order Id: ".  print_r($order_id) ."</p>" .
+                        "<h6 class='text-center'>" ."Order Id: ". $order_id =  $_POST['order_id'] ."</h6>" .
+                       "<p>" . "Name: " .($_POST['firstname']) . " " . ($_POST['lastname']) ."</p>" .
+                       "<p>" . "Address: " .($_POST['streetname']) . ", ". ($_POST['city']) .  "<br> " .($_POST['province']). " - " .                           ($_POST['postal_code']) ."</p>" .
+                       "<p>" ."Email Id: " .  ($_POST['email_id']) ."</p>" .
+                       "<p>" ."Phone No.: " .  ($_POST['phone_no']) ."</p>" .
+                       "<p>" ."Pick-Up Date: ".  ($_POST['delivery_date']) ."</p>" .   //cake description
                        
+                      /*
+                       "<div class='text-center'>" .
+                       "<form action='response.php' method='post'>".
+                           // "<input type='hidden' name = 'id' value='$c->id' />" .
+                            "<input type='hidden' name = 'firstname' value='$firstname' />" .
+                            "<input type='hidden' name = 'lastname' value='$lastname' />" .
+                            "<input type='hidden' name = 'email_id' value='$email' />" .
+                            "<input type='submit' name='confirm_order' value='Confirm Order'  class = 'btn-primary pull-left'/>" .
+                            "</form>" .
                        
+                       "<form>" .
+                       " <a href='products/listCakes.php' class = 'btn-primary pull-right' style='padding:5px;margin:20px; display: inline-block;vertical-align: bottom;'> " . "Cancel " . "</a>" .
+                       "</form>".
+                       "</div>" .
+                       */
+                       
+                       // confirm order and cancel buttons
+                       "<div class='modal-footer'>" .
+                            "<form action='response.php' method='post'>".
+                           // "<input type='hidden' name = 'id' value='$c->id' />" .
+                            "<input type='hidden' name = 'firstname' value='$firstname' />" .
+                            "<input type='hidden' name = 'lastname' value='$lastname' />" .
+                            "<input type='hidden' name = 'email_id' value='$email' />" .
+                            "<input type='submit' name='confirm_order' value='Confirm Order'  class = 'btn-primary pull-left' style='padding:5px;border-radius:3px;'/>" .
+                            "</form>" .
+                       
+                       "<form>" .
+                       " <a href='products/listCakes.php' class = 'btn-primary pull-right' style='padding:5px;margin:20px; display: inline-block;vertical-align: bottom;padding:5px;border-radius:3px;'> " . "Cancel " . "</a>" .
+                       "</form>".
+       
+                        " </div>" .
+                       
+                        "</div>" .
+                        "</div>" ."</div>" .
+                       
+                       "</div>"
                        ;
                    
-                   //echo $order_id;
 
                     if($c)
                      {
@@ -187,12 +223,7 @@
     
         
 ?>
-        <div>
-        <?php
-           //echo "<h5>" . $response_msg . "</h5>";
-       ?>
-        </div>
-
+       
     </main>
     
 </body>

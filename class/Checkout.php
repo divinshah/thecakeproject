@@ -1,5 +1,5 @@
 <?php
-
+//class file for checkout and order functionality
 class Checkout{
     
     
@@ -8,7 +8,7 @@ class Checkout{
     {
         //$order_id = uniqid(); //order id 
         $sql = "INSERT INTO checkout_delivery_info (firstname, lastname, streetname, city, province, postal_code, email_id, phone_no, delivery_date, order_id )
-                VALUES( :firstname, :lastname, :streetname, :city, :province, :postal_code, :email_id, :phone_no, :delivery_date, :order_id)"; //sql query to insert all details for an employee and also which post applied for (means job_id as a foreign key from JobPosition_admin table) 
+                VALUES( :firstname, :lastname, :streetname, :city, :province, :postal_code, :email_id, :phone_no, :delivery_date, :order_id)";  
     
     $pst = $dbcon->prepare($sql); //prepare statement 
     

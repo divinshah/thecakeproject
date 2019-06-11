@@ -1,4 +1,3 @@
-<!-- HEADER -->
 <?php 
 $page_title = "Contact Form";
 require_once 'database/Database.php';
@@ -51,7 +50,7 @@ if(isset($_POST['addmsg'])){
 
 	
     if (empty($number)) {
-        $numberErr =  "Please enter phone number <br />";
+        $numberErr =  "Please enter phone number <br>";
     } elseif (!preg_match("/^[0-9]{10}$/", $number)) {
         $numberErr =  "Please enter valid phone number <br />";
     } else {
@@ -59,7 +58,7 @@ if(isset($_POST['addmsg'])){
     }
 	
 	 if ($email == "") {
-        $emailErr =  "Please enter email <br />";
+        $emailErr =  "Please enter email <br>";
     }elseif(!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){
         $emailErr =  "Please enter valid email format<br />";
     }else {
@@ -73,21 +72,32 @@ if(isset($_POST['addmsg'])){
     }   
 }
 	?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="adminStyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
 <main id="main">
 <div class="top_container">
   <h2 style="color:#EF3E64;"><center>Want to talk to us?</center></h2>
     <div class="container-fluid"  style="background-color:#71C9BD;">
       <div class="row">
-        <div class="col-sm-4"><center><i class="fas fa-map-marker-alt"></i><br/><br/><br/>205 Humber College Blvd.,<br/>Toronto,<br/>Ontario, <br/> Canada <br/> M9W 5L7</center></div>
-        <div class="col-sm-4"><center><i class="fas fa-envelope-open-text"></i><br/><br/><br/>Mr.Cake@gmail.com</center></div>
-        <div class="col-sm-4"><center><i class="fas fa-phone"></i><br/><br/><br/>1234567890</center></div>
+        <div class="col-sm-4"><center><br><br><b>Address</b><br/><br/><br/>205 Humber College Blvd.,<br/>Toronto,<br/>Ontario, <br/> Canada <br/> M9W 5L7</center></div>
+        <div class="col-sm-4"><center><br><br><b>E-mail</b><br/><br/><br/>Mr.Cake@gmail.com</center></div>
+        <div class="col-sm-4"><center><br><br><b>Contact</b><br/><br/><br/>1234567890</center></div>
     </div>
    </div>
 </div>
 
 <div class="container">	
 </br></br>	
-<!--form starts here-->
  <form action="#" method="post" id="form">
    <div class="form-group">
      <label for="contact_form_fname">First Name:<span class="red"><?= $fnameErr; ?></span></label>
@@ -117,5 +127,6 @@ if(isset($_POST['addmsg'])){
  </form>
 </div>
 </main>
-<?php 
-require_once 'footer.php'; ?>
+<?php require_once 'footer.php'; ?>
+</body>
+</html>

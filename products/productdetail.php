@@ -38,7 +38,7 @@ $mycake = $b->getCakeById($id, $dbcon);
               </select>
             <p>$mycake->cakeDesc </p><br/> " .
              
-            //link for checkout page
+            //margi added link for checkout page using cake id
         "<a href='../checkout.php?id=".$id."' class = 'btn-primary pull-right' style='padding:5px;margin:20px;'> " . "Buy " . "</a>" ;
 
       ?>

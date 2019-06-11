@@ -90,11 +90,11 @@ if(isset($_POST['add'])){
         </li>
         <br>				
          <li class="active">
-          <a href="faq/addFaq.php">FAQ</a>
+          <a href="addFaq.php">FAQ</a>
         </li>
         <br>
          <li class="active">
-          <a href="listfaqs_admin.php">Contact</a>
+          <a href="addContactForm.php">Contact</a>
         </li> 
         <br>		
       </ul>
