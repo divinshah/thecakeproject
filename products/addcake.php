@@ -67,7 +67,7 @@ if(isset($_POST['add'])){
     <div class="container">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a href="logout.php" class="nav-link">
+            <a href="/thecakeproject/logout.php" class="nav-link">
               <i class="fas fa-user-times"></i> Logout
             </a>
           </li>
@@ -82,7 +82,7 @@ if(isset($_POST['add'])){
 
       <ul class="list-unstyled components">
         <li class="active">
-          <a href="products/addcake.php">Cakes</a>
+          <a href="/thecakeproject/products/addcake.php">Cakes</a>
         </li>
 		<br>
         <li class="active">
@@ -90,7 +90,7 @@ if(isset($_POST['add'])){
         </li>
         <br>				
          <li class="active">
-          <a href="addFaq.php">FAQ</a>
+          <a href="/thecakeproject/addFaq.php">FAQ</a>
         </li>
         <br>
          <li class="active">

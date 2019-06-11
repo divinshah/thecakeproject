@@ -22,6 +22,11 @@
 <link rel="stylesheet" href="styles/order.css">
 </head>
 <body>
+<div class="jumbotron">
+    <div class="container cake-head">
+        <h1>Cake checkout</h1>
+    </div>
+</div>
     <main id="order_main">
     <h2 style="text-align:center;">Mr.Cake CheckOut</h2>
     

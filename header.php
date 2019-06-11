@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="styles/header.css">
-	<link rel="stylesheet" href="/thecakeproject/header.css">
+	
+	
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="login.css">
+<link rel="stylesheet" type="text/css" href="/thecakeproject/styles/header.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -29,7 +30,7 @@
 			</div>
 			<ul>
 
-				<a href="index.php"><li>Home</li></a>
+				<a href="/thecakeproject/index.php"><li>Home</li></a>
 				
 				<a href="#"><li>About</li></a>
 
@@ -40,7 +41,7 @@
 				
 				<a href="listFaq-user.php"><li>FAQ</li></a>
 				
-				<a href="login.php"><li>Login</li></a>
+				<a href="/thecakeproject/login.php"><li>Login</li></a>
 			</ul>
 			
 		</nav>
