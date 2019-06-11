@@ -20,6 +20,10 @@
     font-weight:bold;
 	padding:5px 0 5px 0;
 }
+.producttitle a{
+	color: #191919 ;
+	text-decoration: none;
+}
 
 .productprice {
 	border-top:1px solid #dadada;

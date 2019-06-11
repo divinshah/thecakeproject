@@ -38,8 +38,8 @@ $mycake = $b->getAllCakes(Database::getDb());
     
     <div class="col-md-4 column productbox">
     <img <?php echo "src=uploads/$cake->cakeImage" ?> class="img-responsive card-img-top" width="300px">
-    <div class="producttitle"><?php echo $cake->cakeName ?></div>
-    <div class="productprice"><div class="pull-right"><a href="#" class="btn btn-primary btn-sm" role="button">BUY</a></div><div class="pricetext">£8.95</div></div>
+    <div class="producttitle"><?php echo "<div><strong><a href='productdetail.php?id=$cake->id'> $cake->cakeName </strong></div>" ?></div>
+    <div class="productprice"><div class="pull-right"><div class="btn btn-primary btn-sm" role="button">BUY</div></div></a><div class="pricetext">£8.95</div></div>
   </div>
   
   <?php } ?>

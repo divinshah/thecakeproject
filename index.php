@@ -7,19 +7,12 @@
 <body>
 
 <div class="jumbotron">
-    
+<div class="container cake-head text-center">
+        <h1 style="font-family: 'pacifico';">Welcome to our Cake Shop</h1>
+    </div>   
     
 </div>
-  <!--
-    <section id="intro" class="clearfix">
-    <div class="container">
-    </div>
-  </section>
-  
-  <div class="banner">
-    <img src="images/banner.jpg" alt="banner image">
-  </div>
--->
+
   <section>
    
    
@@ -52,7 +45,7 @@ $mycake = $b->getAllCakes(Database::getDb());
     <div class="col-md-4 column productbox">
     <img <?php echo "src=products/uploads/$cake->cakeImage" ?> class="img-responsive card-img-top" width="300px">
     <div class="producttitle"><?php echo $cake->cakeName ?></div>
-    <div class="productprice"><div class="pull-right"><a href="#" class="btn btn-primary btn-sm" role="button">BUY</a></div></div>
+    <div class="productprice"><div class="pull-right"><a href="products/viewcakes.php" class="btn btn-primary btn-sm" role="button">BUY</a></div></div>
   </div>
   
   <?php } ?>
