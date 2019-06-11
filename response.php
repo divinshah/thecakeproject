@@ -1,4 +1,4 @@
-
+<!--response page(Margi Patel)-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,9 +37,6 @@ require_once ('class/Checkout.php');
     //print_r($_POST);
     //die();
 
-//Margi added for click on submit button
-//if(isset($_POST['confirm_order'])) {
-          //$email_id = $_POST['email_id'];
 $response_msg = false;
 if(isset($_POST['confirm_order']))
 {

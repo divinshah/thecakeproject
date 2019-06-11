@@ -1,3 +1,4 @@
+<!--orderDetails page(Margi Patel)-->
 <!--<!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +32,8 @@
         
 <?php
         
-   // require_once 'Database.php';
-    //require_once 'Checkout.php';
+        // require_once 'Database.php';
+        //require_once 'Checkout.php';
         include 'database/Database.php';
         include 'class/Checkout.php';
         require_once './products/cakes.php'; 
@@ -42,34 +43,10 @@
         echo ($_POST['firstname']);
         die(); */
         
-        //$count = "";
-        //$firstname = $_GET['firstname'];
-        //$lastname = $_GET['lastname'];
-        
-    //get id
-  /*  if(isset($_GET['id']) && $_GET['id']!=''){
-        $id = $_GET['id'];
-
-        $dbcon = Database::getDb();
-        $d = new Checkout();
-        $count = $d->getOrderById($id,$dbcon);
-    
-        //foreach($count as $position){
-       //var_dump($count);
-    }
-         echo  "<div>" . "<h3>" . $count ->firstname ."</h3>" . "<br>" .
-                                "<p>" . $count ->order_id . "</p>";
-         */
-        
-         
-        
-       // echo ($_POST['firstname']);
-        
-        //echo ($_POST['order_id']);
 ?>
    
 <?php
-        
+        //defining variables
         $firstname = $lastname = $streetname = $city = $province = $postal_code = $email_id = $phone_no = $delivery_date = $order_id = "";
         $response_msg = "";
             if(isset($_POST['submitinfo']))
@@ -85,8 +62,8 @@
                $phone_no = $_POST['phone_no'];
                $delivery_date = $_POST['delivery_date'];
                $order_id = $_POST['order_id'];
-                $cakeName = $_POST['cake_name']; //cake name
-                $cakeDesc = $_POST['cake_desc']; //cake description
+               $cakeName = $_POST['cake_name']; //cake name
+               $cakeDesc = $_POST['cake_desc']; //cake description
 
               
                 //defined email variable to send email on response page
@@ -223,12 +200,6 @@
                        "</div>"
                        ;
                    
-                   
-                   
-                   
-                   
-                   
-                   //echo $order_id;
 
                     if($c)
                      {
@@ -252,12 +223,7 @@
     
         
 ?>
-        <div>
-        <?php
-           //echo "<h5>" . $response_msg . "</h5>";
-       ?>
-        </div>
-
+       
     </main>
     
 </body>

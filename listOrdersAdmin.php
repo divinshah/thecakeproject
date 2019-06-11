@@ -1,5 +1,5 @@
 
-<!--List of Employees Page at Admin Side (list of Employees) -->
+<!--List of Orders Page at Admin Side (list of Orders) -->
 
 <!DOCTYPE html>
 <html>
@@ -7,72 +7,11 @@
 <?php require "header.php" ?>
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles/adminStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-<!--Margi added JS Script-->    
-    
-<!--<script type="text/javascript">
-var $jj = jQuery.noConflict();
-$jj(document).ready(function () {
-    $jj('.delivery-confirm').on('click', function () {
-        var _this = $jj(this);
-        $jj.confirm({
-            title: 'Confirm!',
-            content: 'Are you sure? Once confirmed, you cannot dispute this transaction.',
-            buttons: {
-                confirm: function () {
-                    _this.closest('form').submit();$("#confirmbutton").prop("disabled",true);
-                },
-                cancel: function () {
-
-                }
-            }
-        });
-    });
-    
-});
-</script>-->
     
 </head>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="container">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="logout.php" class="nav-link">
-              <i class="fas fa-user-times"></i> Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-  </nav>
- <div class="wrapper">
-  <nav id="sidebar" class="bg-secondary">
-      <div class="sidebar-header ">
-        <h2>Admin Panel</h2>
-      </div>
-
-      <ul class="list-unstyled components">
-        <li class="active">
-          <a href="products/addcake.php">Cakes</a>
-        </li>
-		<br>
-        <li class="active">
-          <a href="listJobPostsAdmin.php">Orders</a>
-        </li>
-        <br>				
-         <li class="active">
-          <a href="faq/addFaq.php">FAQ</a>
-        </li>
-        <br>
-         <li class="active">
-          <a href="listfaqs_admin.php">Contact</a>
-        </li> 
-        <br>		
-      </ul>
-    </nav>
 
 <body class="container" style="padding-left: 0px;
 padding-right: 0px; margin: 0 auto; width: 1200px;">
@@ -90,9 +29,6 @@ padding-right: 0px; margin: 0 auto; width: 1200px;">
               <th>Employee Name</th>
               <!--<th>Order Detail</th>-->
               <th>Address</th>
-              <!--<th>Skill Requirements</th>
-              <th>Job Requirements</th> -->
-              <!--<th>Description</th> -->
               <th>Contact Info.</th>
               <th>Pick-Up Date</th>
               <th>Order Id</th>     
@@ -105,25 +41,21 @@ padding-right: 0px; margin: 0 auto; width: 1200px;">
            
         require_once ('database/Database.php');
         require_once ('class/Checkout.php');
-   //require_once 'Order.php';
+   
 
             $dbcon = Database::getDb();
             $cd = new Checkout();
             $mycust =  $cd->getAllCustomerWithDetails(Database::getDb()); //
 
-            //display all list of employee
+            //display all list of customer details with orderid
             foreach($mycust as $cutomerdetail)
             {
                 echo "" .  
                         "<tr>" .
 
-                            //echo "<ul class='list-group'>" .
-                            //"<li class='list-group-item'>" .  
                             "<td class='w-18'>" . $cutomerdetail->firstname . " " . $cutomerdetail->lastname . "</td>" .
-                                        // $employee->job_id  . 
-                            //"<td>" . $cutomerdetail->job_title . "</td>" .
                             "<td>" . $cutomerdetail->streetname . ", " . $cutomerdetail->city . ", " . $cutomerdetail->province . ", " . 
-                                        $cutomerdetail->postal_code . "</td>".
+                                     $cutomerdetail->postal_code . "</td>".
                             "<td>" . $cutomerdetail->email_id . ", " . "<br>" . $cutomerdetail->phone_no . "</td>" .
                             "<td>" . $cutomerdetail->delivery_date . "</td>".
                             "<td>" . $cutomerdetail->order_id . "</td>".
@@ -135,26 +67,10 @@ padding-right: 0px; margin: 0 auto; width: 1200px;">
                             "<input type='submit' name='delete' value='Completed'  class='btn btn-primary'/>" .
                             "</form>" .
                             "<br>" .
-                            //"<form action='' method='post'>".
-                            //"<input type='hidden' name = 'id' value='$cutomerdetail->id' />" .
-                            //"<input type='submit' name='delete' value='Processing'  class='btn btn-primary'/>" .
-                            //"</form>" .
-
-                            //"</li>" .
-                            // "</ul>";
+                            
                             "</td>" . 
-                    
                    
-                    //margi trying to hide row
-                    
-                  /*  "<form action='' method='post' class='delivery-confirm'>" .
-                    "<input type='hidden' name='id' value='$cutomerdetail->id'' > " .
-                    "<input type='button' value='CONFIRM' class='delivery-confirm' id='confirmbutton' 
-                    <?php echo $cutomerdetail->id ? 'disabled' : ''; ?>/>" .
-                    "</form>" .
-                    */
-                    
-                    "</tr>";
+                        "</tr>";
 
             }
 
@@ -166,8 +82,6 @@ padding-right: 0px; margin: 0 auto; width: 1200px;">
     </div>
    </div>
   </main>
-  </div>
-  </div>
   <!--footer-->
 <?php include "footer.php" ?>
 </body>

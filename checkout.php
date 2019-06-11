@@ -1,3 +1,4 @@
+<!--checkout page(Margi Patel)-->
 <!--
 <!DOCTYPE html>
 <html>
@@ -335,7 +336,7 @@
     <!--cake id and Details(Cake Name, Cake Description)-->
     <div>
         <input type="hidden" name="cake_name" value="<?=$mycake->cakeName?>" />
-        <input type="hidden" name="cake_id" value="<?=$mycake->cakeImage?>" />
+        <input type="hidden" name="cake_img" value="<?=$mycake->cakeImage?>" />
         <input type="hidden" name="cake_desc" value="<?=$mycake->cakeDesc?>" />
         
     </div>
