@@ -9,8 +9,6 @@ $_SESSION = array();
 session_destroy();
  
 session_unset();
-// Redirect to login page
-//header("location: login1.php");
 header("location: login.php");
 exit;
 ?>

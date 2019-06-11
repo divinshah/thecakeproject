@@ -2,6 +2,7 @@
 $page_title = "Admin ListContactForm";
 require_once '../database/Database.php';
 require_once 'ContactForm.php';
+require_once '../adminheader.php'; 
 
 $dbcon = Database::getDb();
 $t = new ContactForm();
@@ -10,7 +11,6 @@ $cf =  $t->getAllContactForm(Database::getDb());
 
 <!--Content-->
 <main id="main_searchFaqAdmin">
-        <h2>ADMIN => Contact Forms</h2>
         <div class="container">
             <div>
 			 <ul class="list-group list-group-flush">
@@ -32,3 +32,4 @@ $cf =  $t->getAllContactForm(Database::getDb());
         </div>
 
 </main>
+<?php require_once '../adminfooter.php';

@@ -6,15 +6,13 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <body>
 
-<section id="intro" class="clearfix">
-    <div class="container">
-    </div>
-  </section>
-  <!--
-  <div class="banner">
-    <img src="images/banner.jpg" alt="banner image">
-  </div>
--->
+<div class="jumbotron">
+<div class="container cake-head text-center">
+        <h1 style="font-family: 'pacifico';">Welcome to our Cake Shop</h1>
+    </div>   
+    
+</div>
+
   <section>
    
    
@@ -29,13 +27,30 @@
 	
   </section>
 
+  <!-- Cakes list -->
+  <?php
+require_once 'products/database.php';
+require_once 'products/cakes.php';
+
+$dbcon = Database::getDb();
+$b = new Cakes();
+$mycake = $b->getAllCakes(Database::getDb());
+
+
+?>
   <div class="container-fluid">
+  <div class="row">
+  <?php foreach($mycake as $cake){ ?>
+    
+    <div class="col-md-4 column productbox">
+    <img <?php echo "src=products/uploads/$cake->cakeImage" ?> class="img-responsive card-img-top" width="300px">
+    <div class="producttitle"><?php echo $cake->cakeName ?></div>
+    <div class="productprice"><div class="pull-right"><a href="products/viewcakes.php" class="btn btn-primary btn-sm" role="button">BUY</a></div></div>
+  </div>
   
-    <div class="row">
-    <div class="col-sm-4">img1</div>
-    <div class="col-sm-4">img2</div>
-    <div class="col-sm-4">img3</div>
-	</div>
+  <?php } ?>
+  </div>
+   
   
 </div>
 

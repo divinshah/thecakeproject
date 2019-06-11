@@ -1,3 +1,4 @@
+<!--checkout page(Margi Patel)-->
 <!--
 <!DOCTYPE html>
 <html>
@@ -21,28 +22,43 @@
 <link rel="stylesheet" href="styles/order.css">
 </head>
 <body>
+<div class="jumbotron">
+    <div class="container cake-head">
+        <h1>Cake checkout</h1>
+    </div>
+</div>
     <main id="order_main">
-    <h2 style="text-align:center;">Mr.Cake CheckOut</h1>
+    <h2 style="text-align:center;">Mr.Cake CheckOut</h2>
     
     <div>
-     <h4>Your Order Details</h4>
+     <!--<h4>Your Order Details</h4>-->
     </div>
         
     <div>
-     <h4>Fill the Details</h4>
-        <h5>Delivery Address</h5>
+     <h4>Fill the Pickup Details</h4>
+       
         
        
     <?php
 
         require_once ('database/Database.php');
         require_once ('class/Checkout.php');
+        require_once './products/cakes.php'; //for cake id
        // require_once ($_SERVER['DOCUMENT_ROOT'] . '/project-merj-2019/class/Employee_client.php');
 
-            //$response_msg=""; //response message
-    $firstname = $lastname = $streetname = $city = $province = $postal_code = $email_id = $phone_no = $delivery_date = $order_id = "";
-
-            if(isset($_POST['submitinfo']))
+       //defining variables
+        $firstname = $lastname = $streetname = $city = $province = $postal_code = $email_id = $phone_no = $delivery_date = $order_id = "";
+    
+            // Order detail:
+            //if(isset($order_id)){
+                $id = $_GET['id'];
+                $dbcon = Database::getDb();
+                $b = new Cakes();
+                $mycake = $b->getCakeById($id, $dbcon);
+           // echo $_POST['order_id'];
+            //}
+            
+            if(isset($_POST['confirm_order']))
             {
                
                $firstname = $_POST['firstname'];
@@ -57,7 +73,6 @@
                $order_id = $_POST['order_id'];
 
             //VALIDATION
-     
             //function for streetname, city, province, availability
                 function text_validation($value)
                 {
@@ -72,7 +87,6 @@
                 }
 
             //function for First Name, Last Name, Postal Code, Phone No., Email Id
-   
                 function validate($value, $pattern = "")
                 {
                     if($value == "")
@@ -117,23 +131,10 @@
                 $patternEmail = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"; //reference :https://stackoverflow.com/questions/940577/javascript-regular-expression-email-validation?lq=1
                 $email_err = validate($email_id,$patternEmail);
 
-                //availablity
+                //pick up date
                 $delivery_date_err = text_validation($delivery_date);
 
 
-        
-                //connection with database
-             /*  if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['streetname']) && !empty($_POST['city']) && !empty($_POST['province']) && !empty($_POST['postal_code']) && !empty($_POST['email_id']) && !empty($_POST['phone_no']) && !empty($_POST['delivery_date']))
-               {
-               
-               
-                   $dbcon = Database::getDb(); //get database connection
-                   $cd = new Checkout(); //create new instance of object 
-                   $c = $cd->addCustomerInfo($firstname, $lastname, $streetname, $city, $province, $postal_code, $email_id, $phone_no, $delivery_date, $order_id, $dbcon); //call the method addEmployee
-//get id for inserted data
-                  //$id = $cd->lastInsertId(); //added
-                    //echo $id;
-            */
                     if($c)
                      {
                         //$response_msg = "Thank You  $firstname $lastname for your Interest! We will response you soon on  $email_id";
@@ -145,24 +146,15 @@
                         echo "problem adding a customer";
                      } 
 
-            /*  }
-              else
-               {
-                  echo "Please Fill All Required Fields";
-
-               }
-               */
-       
+        
             }    
     
     ?>
 
-<!--Form for an employee --> 
+<!--Form for an Checkout --> 
   <form action="orderDetail.php" method="post" class="form-horizontal">
-    <!--<div class="form-group">
-        <input type="hidden" name="job_id" value="<?= $post_id; ?>" /> 
-    </div>-->
     
+    <!--First Name-->
     <div class="form-group">
         <label class="control-label col-sm-2" for="firstname"> First Name:</label>
         <div class="col-sm-6">
@@ -180,7 +172,8 @@
                 ?>
             </span><br /> 
     </div>
-
+      
+    <!--Last Name-->  
     <div class="form-group">
         <label class="control-label col-sm-2" for="lastname"> Last Name:</label>
         <div class="col-sm-6">
@@ -199,6 +192,7 @@
             </span><br /> 
     </div>
     
+    <!--Street Name-->
     <div class="form-group">
       <label class="control-label col-sm-2" for="streetname">Street Name:</label>
       <div class="col-sm-6">    
@@ -217,6 +211,7 @@
             </span><br />
     </div>
      
+    <!--City-->
     <div class="form-group">
       <label class="control-label col-sm-2" for="city">City:</label>
       <div class="col-sm-6">        
@@ -234,7 +229,8 @@
                 ?>
             </span><br />
     </div>
-     
+      
+    <!--Province--> 
     <div class="form-group">
       <label class="control-label col-sm-2" for="province">Province:</label>
       <div class="col-sm-6">            
@@ -253,6 +249,7 @@
             </span><br />
     </div>
     
+    <!--Postal Code--> 
     <div class="form-group">
       <label class="control-label col-sm-2" for="postal_code">Postal Code:</label>
       <div class="col-sm-6">               
@@ -271,6 +268,7 @@
             </span><br />
     </div>
     
+    <!--Email Id--> 
     <div class="form-group">
       <label class="control-label col-sm-2" for="email_id">Email Id:</label>
       <div class="col-sm-6">       
@@ -289,6 +287,7 @@
             </span><br />
     </div>
     
+    <!--Phone No--> 
     <div class="form-group">
       <label class="control-label col-sm-2" for="phone_no">Phone No:</label>
       <div class="col-sm-6">      
@@ -307,8 +306,9 @@
             </span><br />
     </div>
     
+    <!--Pick Up Date--> 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="delivery_date">Delivery Date:</label>
+      <label class="control-label col-sm-2" for="delivery_date">Pick-Up Date:</label>
       <div class="col-sm-6">     
       <input type="date" name="delivery_date" class="form-control" value="<?php
                             if(isset($delivery_date)){
@@ -331,13 +331,22 @@
       <div class="form-group">
         <input type="hidden" name="order_id" value="<?php
                             //if(isset($order_id)){
-                                echo $order_id;
+                                echo $order_id = uniqid();
                            // echo $_POST['order_id'];
                             //}
                       ?>" /> 
     </div>
-    
+      
+      
+    <!--cake id and Details(Cake Name, Cake Description)-->
+    <div>
+        <input type="hidden" name="cake_name" value="<?=$mycake->cakeName?>" />
+        <input type="hidden" name="cake_img" value="<?=$mycake->cakeImage?>" />
+        <input type="hidden" name="cake_desc" value="<?=$mycake->cakeDesc?>" />
+        
+    </div>
  
+   <!--Submit Button-->
    <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class='btn btn-primary' name="submitinfo" value="Submit">Submit</button>
@@ -345,19 +354,11 @@
     </div>
     
   </form>
-    <!-- Response Message -->
-   <!--<div id="response_message">
-       <?php
-           echo $response_msg;
-       ?>
-    </div> -->
-        
-        <!--Billing Address -->
-       <!-- <h5>Billing Address</h5>-->
-    </div>
+   
+</div>
               
             
-    </main>
+</main>
     
 </body>
 

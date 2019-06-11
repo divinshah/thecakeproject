@@ -1,14 +1,14 @@
 <?php
-
+//class file for checkout and order functionality
 class Checkout{
     
     
     //add Customer Information to the database
     public function addCustomerInfo( $firstname, $lastname, $streetname, $city, $province, $postal_code, $email_id, $phone_no, $delivery_date, $order_id, $dbcon)
     {
-        $order_id = uniqid(); //order id 
+        //$order_id = uniqid(); //order id 
         $sql = "INSERT INTO checkout_delivery_info (firstname, lastname, streetname, city, province, postal_code, email_id, phone_no, delivery_date, order_id )
-                VALUES( :firstname, :lastname, :streetname, :city, :province, :postal_code, :email_id, :phone_no, :delivery_date, :order_id)"; //sql query to insert all details for an employee and also which post applied for (means job_id as a foreign key from JobPosition_admin table) 
+                VALUES( :firstname, :lastname, :streetname, :city, :province, :postal_code, :email_id, :phone_no, :delivery_date, :order_id)";  
     
     $pst = $dbcon->prepare($sql); //prepare statement 
     
@@ -68,6 +68,18 @@ class Checkout{
         $orderdetail = $pst->fetch(PDO::FETCH_OBJ);
         
         return $orderdetail; 
+    }
+    
+    
+      //to delete order(Admin can Delete it)
+     public function deleteOrder($id, $dbcon){
+        $sql = "DELETE FROM checkout_delivery_info WHERE id = :id";
+
+        $pst = $dbcon->prepare($sql);
+        $pst->bindParam(':id', $id);
+        $count = $pst->execute();
+        return $count;
+
     }
        
 }

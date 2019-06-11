@@ -1,4 +1,6 @@
 <?php 
+
+#REFERENCE https://codewithawa.com/posts/admin-and-user-login-in-php-and-mysql-database
 session_start();
 
 // connect to database
@@ -50,7 +52,7 @@ function register(){
 					  VALUES('$userName',  '$user_type', '$email', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: home.php');
+			header('location: index.php');
 		}else{
 			$query = "INSERT INTO clients (user_name, user_type, email,  password) 
 					  VALUES('$userName', 'user','$email', '$password')";
@@ -136,7 +138,11 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
+<<<<<<< HEAD
 				header('location: admin.php');		  
+=======
+				header('location: products/addcake.php');		  
+>>>>>>> 26d018feace532ed22f4ce9c81c01fc80187e5c3
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
