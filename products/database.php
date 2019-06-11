@@ -6,8 +6,8 @@ class Database
     //properties
     private static $user = 'root';
     private static $pass = '';
-    private static $db = 'cakeproject';
-    private static $dsn = 'mysql:host=localhost;dbname=cakeproject';
+    private static $db = 'mrcake';
+    private static $dsn = 'mysql:host=localhost;dbname=mrcake';
     private static $dbcon;
 
     private function __construct()

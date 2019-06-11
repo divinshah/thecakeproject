@@ -1,8 +1,21 @@
 .cake-section{
-	background-color: #71C9BD;
+	
 }
 .page-wrapper {
 	max-width:1200px;
 	margin:0 auto;
 	position:relative;
 }
+.jumbotron {
+    background-image: url("../images/imagecake.jpg");
+    background-size: cover;
+    height: 350px;
+  }
+  .cake-head{
+    color: #ffffff;
+}
+  .cakeimage{
+	  padding-left: 100px;
+	  padding-bottom: 30px;
+	  width: 100px;
+  }

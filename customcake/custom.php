@@ -8,12 +8,19 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <link rel="stylesheet" href="style/customcake.css">
 <body>
-
+<div class="jumbotron">
+    <div class="container cake-head">
+        
+    </div>
+</div>
 <section id="intro" class="clearfix">
     <div class="container">
     </div>
   </section>
-  <main class="cake-section">
+  <div class="row">
+  <div class="col-md-2">
+  </div>
+  <main class="cake-section col-md-6">
 	  <section class="page-wrapper">
 		  <main class="cake-section">
 		   <h2>Make your own cake</h2>
@@ -41,76 +48,76 @@
 				<br />
 				<input type="radio" name="chook" value="1" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="icing_btn" value="Icing>>>">
+				<input type="button" class="btn btn-primary" id="icing_btn" value="Icing">
 				
 			</div>
 			<!-- Select icing for chocolate base cake -->
 			<div id="icing_chocolatebase">
-				<h3>Choose Icing for chcolate base cake</h3>
+				<h4>Choose Icing for chocolate base cake</h4>
 				<input type="radio" name="chook" value="2" onclick="displaychook(this);">Chocolate
 				<br />
 				<input type="radio" name="chook" value="3" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_cc_btn" value="Topping>>>">
+				<input type="button" class="btn btn-primary" id="topping_cc_btn" value="Topping">
 			</div>
 			<!-- Select icing for strawberry base cake -->
 			<div id="icing_strawberrybase">
-				<h3>Choose Icing for strawberry base cake</h3>
+				<h4>Choose Icing for strawberry base cake</h4>
 				<input type="radio" name="chook" value="4" onclick="displaychook(this);">Chocolate
 				<br />
 				<input type="radio" name="chook" value="5" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_cs_btn" value="Topping>>>">
+				<input type="button" class="btn btn-primary" id="topping_cs_btn" value="Topping">
 			</div>
 			<!-- Select Toppping for chocolate base chocolate icing cake -->
 			<div id="topping_cc">
-				<h3>Choose Topping for your cake</h3>
+				<h4>Choose Topping for your cake</h4>
 				<input type="radio" name="chook" value="6" onclick="displaychook(this);">Cheery
 				<br />
 				<input type="radio" name="chook" value="7" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_btn" value="Cake">
+				
 			</div>
 			<!-- Select topping for chocolate base, straberry icing -->
 			<div id="topping_cs">
-				<h3>Choose Topping for your cake</h3>
+				<h4>Choose Topping for your cake</h4>
 				<input type="radio" name="chook" value="8" onclick="displaychook(this);">Cheery
 				<br />
 				<input type="radio" name="chook" value="9" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_btn" value="Cake">
+				
 			</div>
 			<!-- Select Toppping for strawberry base chocolate icing cake -->
 			<div id="topping_sc">
-				<h3>Choose Topping for your cake</h3>
+				<h4>Choose Topping for your cake</h4>
 				<input type="radio" name="chook" value="10" onclick="displaychook(this);">Cheery
 				<br />
 				<input type="radio" name="chook" value="11" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_btn" value="Cake">
+				
 			</div>
 			
 			<!-- Select Toppping for strawberry base strawberry icing cake -->
 			<div id="topping_ss">
-				<h3>Choose Topping for your cake</h3>
+				<h4>Choose Topping for your cake</h4>
 				<input type="radio" name="chook" value="12" onclick="displaychook(this);">Cheery
 				<br />
 				<input type="radio" name="chook" value="13" onclick="displaychook(this);">Strawberry
 				
-				<input type="button" id="topping_btn" value="Cake">
+				
 			</div>
 			
 			</form>
 
 			</td>
 			<td>
-
+			<div class="cakeimage">
 			<img src="pics/base1.png" name="chookpic" id="chookpic" />
-
+</div>
 			</td>
 			</tr></table>
 						  
-					
+</div>					
 			
 	  </section>
   </main>
@@ -140,6 +147,7 @@
 	}
 </script>
 <script type="text/javascript" src="script/custom.js"></script>
+
 </body>
 
 <?php include "../footer.php" ?>

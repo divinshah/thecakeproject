@@ -24,27 +24,22 @@ $mycake = $b->getCakeById($id, $dbcon);
     </div>
 </div>
 
-  <section>
+  
   <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    
 
       <?php
-        echo "<h2>  $mycake->cakeName </h2>".
+        echo "<div class='col-sm-6'><h2>  $mycake->cakeName </h2>".
              "<img class='img2' src='uploads/$mycake->cakeImage' alt='cake' width='250px'>".
-             "Size <select>
-                <option>8''</option>
-                <option>12''</option>
-              </select>
-            <p>$mycake->cakeDesc </p><br/> " .
+             "$mycake->cakeDesc<br/> " .
              
             //margi added link for checkout page using cake id
-        "<a href='../checkout.php?id=".$id."' class = 'btn-primary pull-right' style='padding:5px;margin:20px;'> " . "Buy " . "</a>" ;
+        "<a href='../checkout.php?id=".$id."' class = 'btn btn-primary pull-right' style='padding:5px;margin:20px;'> " . "Buy " . "</a></div></div>" ;
 
       ?>
+      
       </div>
-      </div>
-  </section>
 
 </div> 
 
