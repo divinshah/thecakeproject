@@ -44,6 +44,7 @@ $mycake = $b->getAllCakes(Database::getDb());
   
   <?php } ?>
   </div>
+ 
 
 </div>
   </body>

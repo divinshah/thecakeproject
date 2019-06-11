@@ -37,7 +37,7 @@
 				<a href="/thecakeproject/products/viewcakes.php"><li>Cakes</li></a>
 				<img class="image" src="images/cakelogo.png" alt="cake logo"/>
 
-				<a href="addContactForm.php"><li>Contact</li></a>
+				<a href="/thecakeproject/customcake/custom.php"><li>Customise</li></a>
 				
 				<a href="listFaq-user.php"><li>FAQ</li></a>
 				
