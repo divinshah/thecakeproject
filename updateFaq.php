@@ -1,8 +1,20 @@
 <?php
 $page_title = "UpdateFAQ";
+session_start();
 require_once 'database/Database.php';
 require_once 'Faq.php';
 include "header.php"; 
+
+// Only admin will be able to make some changes!
+if(isset($_SESSION['username'] )){
+    if ($_SESSION['username'] !== 'admin' ) {
+        header("Location:login.php");
+        die();
+    } 
+}else{
+    header("Location:login.php");
+    die();
+}
 
 if(isset($_POST['update'])){
     $id = $_POST['id'];
@@ -23,6 +35,8 @@ if(isset($_POST['updFaq'])){
         echo  "problem Updating";
     }
 }
+
+
 ?>
 <!doctype html>
 <html>

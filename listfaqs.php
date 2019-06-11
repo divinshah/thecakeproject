@@ -1,5 +1,6 @@
 <?php
 $page_title = "ListFAQ";
+session_start();
 require_once 'database/Database.php';
 require_once 'Faq.php';
 include 'header.php';
@@ -8,6 +9,25 @@ $dbcon = Database::getDb();
 $t = new Faq();
 $myfaq =  $t->getAllFaq(Database::getDb());
 
+// Only admin will be able to make some changes!
+if(isset($_SESSION['username'] )){
+    if ($_SESSION['username'] !== 'admin' ) {
+        header("Location:login.php");
+        die();
+    } 
+}else{
+    header("Location:login.php");
+    die();
+}
+
+ if(isset($_POST['question'])){
+       $faq_question = $_POST['question'];
+	   $faq_answer = $_POST['answer'];
+        
+        $db = Database::getDb();
+        $c = new Faq();
+        $my_data = $c->addFaq($faq_question, $faq_answer, $db);
+ }
 ?>
 <!doctype html>
 <html>

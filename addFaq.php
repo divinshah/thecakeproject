@@ -1,5 +1,6 @@
 <?php
 $page_title = "AddFAQ";
+session_start();
 require_once 'database/Database.php';
 require_once 'Faq.php';
 include 'header.php';
@@ -9,6 +10,15 @@ $queErr = $ansErr = "";
 $question = $answer = "";
 
 // Only admin will be able to make some changes!
+if(isset($_SESSION['username'] )){
+    if ($_SESSION['username'] !== 'admin' ) {
+        header("Location:login.php");
+        die();
+    } 
+}else{
+    header("Location:login.php");
+    die();
+}
 
  if(isset($_POST['question'])){
        $faq_question = $_POST['question'];
