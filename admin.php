@@ -17,20 +17,14 @@
       <ul class="list-unstyled components">
         <h3>Pages</h3>
         <li class="active">
-          <a href="blogAdmin.php">Blogs</a>
+          <a href="blogAdmin.php">Cake</a>
         </li>
         <li class="active">
-          <a href="listJobPostsAdmin.php">Careers</a>
+          <a href="listJobPostsAdmin.php">Orders</a>
         </li> 
         <li class="active">
-          <a href="#serviceSubmenu">Services</a>
-        </li>
-        <li class="active">
-          <a href="listCustomerReviewsAdmin.php">Reviews</a>
-        </li> 
-        <li class="active">
-          <a href="listfaqs_admin.php">FAQ</a>
-        </li>              
+          <a href="#serviceSubmenu">Customer</a>
+        </li>           
       </ul>
     </nav>
     
